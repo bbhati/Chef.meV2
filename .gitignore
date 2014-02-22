@@ -1,3 +1,4 @@
 *.DS_Store
 Chef.meV2/Chef.meV2.xcworkspace/
 Chef.meV2/Chef.meV2.xcodeproj/xcuserdata/
+Chef.meV2/Chef.meV2.xcodeproj/project.xcworkspace/xcuserdata/*/*
