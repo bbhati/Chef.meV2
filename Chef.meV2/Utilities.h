@@ -12,5 +12,5 @@
 
 + (UIImage*)imageByScalingAndCroppingForSize:(CGSize)targetSize source:(UIImage*)source;
 + (UIImage *) maskWithColor:(UIColor *)color image:(UIImage*)image;
-
++ (NSString*) getUserId;
 @end

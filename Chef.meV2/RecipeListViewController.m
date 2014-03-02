@@ -16,6 +16,7 @@
 #import "DetailViewController.h"
 #import "IngredientsViewController.h"
 #import "StepsViewController.h"
+#import "MHTabBarController.h"
 
 @interface RecipeListViewController ()
 @property (nonatomic, strong) NSMutableArray* recipes;
@@ -51,6 +52,7 @@ NSString* selectedRecipeNotification = @"SelectedRecipeNotification";
 
 -(void)viewWillAppear:(BOOL)animated {
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
+    [[self navigationController] setToolbarHidden:YES];
 }
 
 - (void)viewDidLoad
@@ -213,27 +215,28 @@ NSString* selectedRecipeNotification = @"SelectedRecipeNotification";
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here, for example:
     // Create the next view controller.
-    UITabBarController* tabBarController = [[UITabBarController alloc] init];
-    
+   // UITabBarController* outerTabBarController = [[UITabBarController alloc] init];
+    MHTabBarController * tabBarController =[[MHTabBarController alloc] init];
     DetailViewController* detailViewController = [[DetailViewController alloc] init];
     
     Recipe* recipe = [self.recipes objectAtIndex:indexPath.row];
     detailViewController.recipe = recipe;
     detailViewController.tabBarItem.title = @"Details";
     
-    detailViewController.tabBarItem.image = [UIImage imageNamed:@"star.png"];
+    //detailViewController.tabBarItem.image = [UIImage imageNamed:@"star.png"];
 
     IngredientsViewController* ingVC = [[IngredientsViewController alloc] init];
     ingVC.recipe = recipe;
     ingVC.tabBarItem.title = @"Ingredients";
     
-    ingVC.tabBarItem.image = [UIImage imageNamed:@"star.png"];
+    //ingVC.tabBarItem.image = [UIImage imageNamed:@"star.png"];
 
     
     
     StepsViewController* stepsVC =[[StepsViewController alloc] init];
+    stepsVC.tabBarItem.title = @"Steps";
+    
     NSArray* controllers = [NSArray arrayWithObjects:detailViewController, ingVC, stepsVC, nil];
     tabBarController.viewControllers = controllers;
     

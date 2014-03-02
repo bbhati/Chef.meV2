@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 //#import "LoginViewController.h"
 //#import "PropertyConfigViewController.h"
-//#import "Parse/Parse.h"
+#import "Parse/Parse.h"
 #import "MainViewController.h"
 
 
@@ -18,8 +18,25 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-//    [Parse setApplicationId:@"G0eP59QGmBZWO2v4klysid1aDMvkVcMwmoHbAd3U" clientKey:@"JYQQiB2CVxXS0olE122ZQbpnb00GmCJEO4nucrOI"];
+    [Parse setApplicationId:@"G0eP59QGmBZWO2v4klysid1aDMvkVcMwmoHbAd3U" clientKey:@"JYQQiB2CVxXS0olE122ZQbpnb00GmCJEO4nucrOI"];
+    
+//    PFQuery *query = [PFQuery queryWithClassName:@"Recipe"];
+//    [query whereKey:@"category" equalTo:@"Dessert"];
 //    
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if (!error) {
+//            // The find succeeded.
+//            NSLog(@"Successfully retrieved %d scores.", objects.count);
+//            // Do something with the found objects
+//            for (PFObject *object in objects) {
+//                NSLog(@"%@", object.objectId);
+//            }
+//        } else {
+//            // Log details of the failure
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//    }];
+//
 //    [PFFacebookUtils initializeFacebook];
 //    
    // [PFFacebookUtils initializeWithApplicationId:@"1381929028741946" urlSchemeSuffix:@"fb1381929028741946"];
@@ -34,6 +51,7 @@
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainVC];
     self.window.rootViewController = navController;
 //    self.window.rootViewController = mainVC;
+    navController.toolbarHidden = YES;
 
     [self.window makeKeyAndVisible];
 
