@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C426B2E18B957D60058291B /* ShoppingCartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C426B2C18B957D60058291B /* ShoppingCartController.m */; };
+		1C426B2F18B957D60058291B /* ShoppingCartController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C426B2D18B957D60058291B /* ShoppingCartController.xib */; };
+		1C426B3318B95C8D0058291B /* TabbedViewFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C426B3218B95C8D0058291B /* TabbedViewFooter.xib */; };
+		1C426B3618B9644B0058291B /* ShoppingCartRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C426B3518B9644B0058291B /* ShoppingCartRowCell.m */; };
+		1C426B3A18B9657B0058291B /* ShoppingCartRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C426B3918B9657B0058291B /* ShoppingCartRowCell.xib */; };
+		1C426B3C18B9789F0058291B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C426B3B18B9789F0058291B /* Parse.framework */; };
+		1C426B3E18B979720058291B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C426B3D18B979720058291B /* FacebookSDK.framework */; };
+		1C426B4118B9842D0058291B /* ShoppingCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C426B4018B9842D0058291B /* ShoppingCart.m */; };
+		1C426B4418B984830058291B /* ShoppingCartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C426B4318B984830058291B /* ShoppingCartItem.m */; };
+		1C4A866B18B9A37700F896B9 /* MHTabBarActiveTab.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C4A866318B9A37700F896B9 /* MHTabBarActiveTab.png */; };
+		1C4A866C18B9A37700F896B9 /* MHTabBarActiveTab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C4A866418B9A37700F896B9 /* MHTabBarActiveTab@2x.png */; };
+		1C4A866D18B9A37700F896B9 /* MHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4A866618B9A37700F896B9 /* MHTabBarController.m */; };
+		1C4A866E18B9A37700F896B9 /* MHTabBarInactiveTab.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C4A866718B9A37700F896B9 /* MHTabBarInactiveTab.png */; };
+		1C4A866F18B9A37700F896B9 /* MHTabBarInactiveTab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C4A866818B9A37700F896B9 /* MHTabBarInactiveTab@2x.png */; };
+		1C4A867018B9A37700F896B9 /* MHTabBarIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C4A866918B9A37700F896B9 /* MHTabBarIndicator.png */; };
+		1C4A867118B9A37700F896B9 /* MHTabBarIndicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C4A866A18B9A37700F896B9 /* MHTabBarIndicator@2x.png */; };
 		1C9739C318B39AB20097D051 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9739C218B39AB20097D051 /* Foundation.framework */; };
 		1C9739C518B39AB20097D051 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9739C418B39AB20097D051 /* CoreGraphics.framework */; };
 		1C9739C718B39AB20097D051 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9739C618B39AB20097D051 /* UIKit.framework */; };
@@ -150,7 +166,7 @@
 		1C973B1C18B39AF90097D051 /* TagFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C973A9018B39AF90097D051 /* TagFinder.m */; };
 		1C973B1D18B39AF90097D051 /* UserAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C973A9218B39AF90097D051 /* UserAccountViewController.m */; };
 		1C973B1E18B39AF90097D051 /* UserAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C973A9318B39AF90097D051 /* UserAccountViewController.xib */; };
-		1C973B1F18B39AF90097D051 /* UTilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C973A9518B39AF90097D051 /* UTilities.m */; };
+		1C973B1F18B39AF90097D051 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C973A9518B39AF90097D051 /* Utilities.m */; };
 		1C973B2018B39AF90097D051 /* YummlyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C973A9718B39AF90097D051 /* YummlyClient.m */; };
 		1C973B2E18B39F680097D051 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C973B2918B39F680097D051 /* AudioToolbox.framework */; };
 		1C973B2F18B39F680097D051 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C973B2A18B39F680097D051 /* CFNetwork.framework */; };
@@ -176,6 +192,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C426B2B18B957D60058291B /* ShoppingCartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartController.h; sourceTree = "<group>"; };
+		1C426B2C18B957D60058291B /* ShoppingCartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartController.m; sourceTree = "<group>"; };
+		1C426B2D18B957D60058291B /* ShoppingCartController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCartController.xib; sourceTree = "<group>"; };
+		1C426B3218B95C8D0058291B /* TabbedViewFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabbedViewFooter.xib; sourceTree = "<group>"; };
+		1C426B3418B9644B0058291B /* ShoppingCartRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartRowCell.h; sourceTree = "<group>"; };
+		1C426B3518B9644B0058291B /* ShoppingCartRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartRowCell.m; sourceTree = "<group>"; };
+		1C426B3918B9657B0058291B /* ShoppingCartRowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCartRowCell.xib; sourceTree = "<group>"; };
+		1C426B3B18B9789F0058291B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		1C426B3D18B979720058291B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		1C426B3F18B9842D0058291B /* ShoppingCart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCart.h; sourceTree = "<group>"; };
+		1C426B4018B9842D0058291B /* ShoppingCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCart.m; sourceTree = "<group>"; };
+		1C426B4218B984830058291B /* ShoppingCartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartItem.h; sourceTree = "<group>"; };
+		1C426B4318B984830058291B /* ShoppingCartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartItem.m; sourceTree = "<group>"; };
+		1C4A866318B9A37700F896B9 /* MHTabBarActiveTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MHTabBarActiveTab.png; sourceTree = "<group>"; };
+		1C4A866418B9A37700F896B9 /* MHTabBarActiveTab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MHTabBarActiveTab@2x.png"; sourceTree = "<group>"; };
+		1C4A866518B9A37700F896B9 /* MHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHTabBarController.h; sourceTree = "<group>"; };
+		1C4A866618B9A37700F896B9 /* MHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHTabBarController.m; sourceTree = "<group>"; };
+		1C4A866718B9A37700F896B9 /* MHTabBarInactiveTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MHTabBarInactiveTab.png; sourceTree = "<group>"; };
+		1C4A866818B9A37700F896B9 /* MHTabBarInactiveTab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MHTabBarInactiveTab@2x.png"; sourceTree = "<group>"; };
+		1C4A866918B9A37700F896B9 /* MHTabBarIndicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MHTabBarIndicator.png; sourceTree = "<group>"; };
+		1C4A866A18B9A37700F896B9 /* MHTabBarIndicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MHTabBarIndicator@2x.png"; sourceTree = "<group>"; };
 		1C9739BF18B39AB20097D051 /* Chef.meV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chef.meV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C9739C218B39AB20097D051 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1C9739C418B39AB20097D051 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -344,7 +381,7 @@
 		1C973A9218B39AF90097D051 /* UserAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAccountViewController.m; sourceTree = "<group>"; };
 		1C973A9318B39AF90097D051 /* UserAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAccountViewController.xib; sourceTree = "<group>"; };
 		1C973A9418B39AF90097D051 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
-		1C973A9518B39AF90097D051 /* UTilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UTilities.m; sourceTree = "<group>"; };
+		1C973A9518B39AF90097D051 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 		1C973A9618B39AF90097D051 /* YummlyClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YummlyClient.h; sourceTree = "<group>"; };
 		1C973A9718B39AF90097D051 /* YummlyClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YummlyClient.m; sourceTree = "<group>"; };
 		1C973B2918B39F680097D051 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -376,6 +413,8 @@
 				1C973B3118B39F680097D051 /* libz.dylib in Frameworks */,
 				1C973B3218B39F680097D051 /* MobileCoreServices.framework in Frameworks */,
 				1C9739C518B39AB20097D051 /* CoreGraphics.framework in Frameworks */,
+				1C426B3C18B9789F0058291B /* Parse.framework in Frameworks */,
+				1C426B3E18B979720058291B /* FacebookSDK.framework in Frameworks */,
 				1C9739C718B39AB20097D051 /* UIKit.framework in Frameworks */,
 				1C9739C318B39AB20097D051 /* Foundation.framework in Frameworks */,
 				CE4C43F064FC464781A54F3A /* libPods.a in Frameworks */,
@@ -395,6 +434,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C4A866218B9A37700F896B9 /* MHTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				1C4A866318B9A37700F896B9 /* MHTabBarActiveTab.png */,
+				1C4A866418B9A37700F896B9 /* MHTabBarActiveTab@2x.png */,
+				1C4A866518B9A37700F896B9 /* MHTabBarController.h */,
+				1C4A866618B9A37700F896B9 /* MHTabBarController.m */,
+				1C4A866718B9A37700F896B9 /* MHTabBarInactiveTab.png */,
+				1C4A866818B9A37700F896B9 /* MHTabBarInactiveTab@2x.png */,
+				1C4A866918B9A37700F896B9 /* MHTabBarIndicator.png */,
+				1C4A866A18B9A37700F896B9 /* MHTabBarIndicator@2x.png */,
+			);
+			path = MHTabBarController;
+			sourceTree = "<group>";
+		};
 		1C9739B618B39AB20097D051 = {
 			isa = PBXGroup;
 			children = (
@@ -424,6 +478,8 @@
 		1C9739C118B39AB20097D051 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C426B3D18B979720058291B /* FacebookSDK.framework */,
+				1C426B3B18B9789F0058291B /* Parse.framework */,
 				1C973B3918B39FCC0097D051 /* Security.framework */,
 				1C973B3718B39FC10097D051 /* StoreKit.framework */,
 				1C973B3518B39FB70097D051 /* QuartzCore.framework */,
@@ -570,6 +626,7 @@
 		1C973A4418B39AF80097D051 /* Container */ = {
 			isa = PBXGroup;
 			children = (
+				1C4A866218B9A37700F896B9 /* MHTabBarController */,
 				1C973A4518B39AF80097D051 /* MPAnimation.h */,
 				1C973A4618B39AF80097D051 /* MPAnimation.m */,
 				1C973A4718B39AF80097D051 /* MPFlipEnumerations.h */,
@@ -595,12 +652,20 @@
 		1C973B2118B39B0B0097D051 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1C426B3F18B9842D0058291B /* ShoppingCart.h */,
+				1C426B4018B9842D0058291B /* ShoppingCart.m */,
 				1C973A8818B39AF80097D051 /* RestObject.h */,
 				1C973A8918B39AF80097D051 /* RestObject.m */,
 				1C973A8018B39AF80097D051 /* Recipe.h */,
 				1C973A8118B39AF80097D051 /* Recipe.m */,
 				1C973A8218B39AF80097D051 /* RecipeCell.h */,
 				1C973A8318B39AF80097D051 /* RecipeCell.m */,
+				1C426B3218B95C8D0058291B /* TabbedViewFooter.xib */,
+				1C426B3418B9644B0058291B /* ShoppingCartRowCell.h */,
+				1C426B3518B9644B0058291B /* ShoppingCartRowCell.m */,
+				1C426B3918B9657B0058291B /* ShoppingCartRowCell.xib */,
+				1C426B4218B984830058291B /* ShoppingCartItem.h */,
+				1C426B4318B984830058291B /* ShoppingCartItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -615,6 +680,9 @@
 		1C973B2318B39B280097D051 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1C426B2B18B957D60058291B /* ShoppingCartController.h */,
+				1C426B2C18B957D60058291B /* ShoppingCartController.m */,
+				1C426B2D18B957D60058291B /* ShoppingCartController.xib */,
 				1C973A9118B39AF90097D051 /* UserAccountViewController.h */,
 				1C973A9218B39AF90097D051 /* UserAccountViewController.m */,
 				1C973A9318B39AF90097D051 /* UserAccountViewController.xib */,
@@ -656,7 +724,7 @@
 				1C973A8F18B39AF90097D051 /* TagFinder.h */,
 				1C973A9018B39AF90097D051 /* TagFinder.m */,
 				1C973A9418B39AF90097D051 /* Utilities.h */,
-				1C973A9518B39AF90097D051 /* UTilities.m */,
+				1C973A9518B39AF90097D051 /* Utilities.m */,
 				1C973A9618B39AF90097D051 /* YummlyClient.h */,
 				1C973A9718B39AF90097D051 /* YummlyClient.m */,
 			);
@@ -807,8 +875,10 @@
 				1C973A9818B39AF90097D051 /* 123.png in Resources */,
 				1C973AA218B39AF90097D051 /* 189.png in Resources */,
 				1C973B1A18B39AF90097D051 /* StepsViewController.xib in Resources */,
+				1C4A866F18B9A37700F896B9 /* MHTabBarInactiveTab@2x.png in Resources */,
 				1C973AB718B39AF90097D051 /* 3.png in Resources */,
 				1C973AB518B39AF90097D051 /* 28.png in Resources */,
+				1C4A866C18B9A37700F896B9 /* MHTabBarActiveTab@2x.png in Resources */,
 				1C973AE018B39AF90097D051 /* time.png in Resources */,
 				1C973ADA18B39AF90097D051 /* garlic.png in Resources */,
 				1C973A9F18B39AF90097D051 /* 184.png in Resources */,
@@ -827,18 +897,22 @@
 				1C973AC018B39AF90097D051 /* 39.png in Resources */,
 				1C973ABE18B39AF90097D051 /* 37.png in Resources */,
 				1C973B0318B39AF90097D051 /* image21.jpg in Resources */,
+				1C426B3318B95C8D0058291B /* TabbedViewFooter.xib in Resources */,
 				1C973AC818B39AF90097D051 /* 51.png in Resources */,
+				1C4A866E18B9A37700F896B9 /* MHTabBarInactiveTab.png in Resources */,
 				1C973AD718B39AF90097D051 /* egg2.png in Resources */,
 				1C973AF218B39AF90097D051 /* image4.jpg in Resources */,
 				1C973AD918B39AF90097D051 /* fish.png in Resources */,
 				1C973AAC18B39AF90097D051 /* 2.png in Resources */,
 				1C973ABD18B39AF90097D051 /* 36.png in Resources */,
 				1C973AA618B39AF90097D051 /* 194.png in Resources */,
+				1C4A866B18B9A37700F896B9 /* MHTabBarActiveTab.png in Resources */,
 				1C973AEE18B39AF90097D051 /* InfoPlist.strings in Resources */,
 				1C973ADC18B39AF90097D051 /* meat.png in Resources */,
 				1C973AC218B39AF90097D051 /* 42.png in Resources */,
 				1C973B1E18B39AF90097D051 /* UserAccountViewController.xib in Resources */,
 				1C973AA318B39AF90097D051 /* 191.png in Resources */,
+				1C426B3A18B9657B0058291B /* ShoppingCartRowCell.xib in Resources */,
 				1C973AF018B39AF90097D051 /* image2.jpg in Resources */,
 				1C973AC418B39AF90097D051 /* 44.png in Resources */,
 				1C973AC518B39AF90097D051 /* 45.png in Resources */,
@@ -895,12 +969,15 @@
 				1C973AF318B39AF90097D051 /* image5.jpg in Resources */,
 				1C973AF118B39AF90097D051 /* image3.jpg in Resources */,
 				1C973AB118B39AF90097D051 /* 23.png in Resources */,
+				1C4A867118B9A37700F896B9 /* MHTabBarIndicator@2x.png in Resources */,
+				1C4A867018B9A37700F896B9 /* MHTabBarIndicator.png in Resources */,
 				1C973ACD18B39AF90097D051 /* bread.png in Resources */,
 				1C973AFA18B39AF90097D051 /* image12.jpg in Resources */,
 				1C973ACC18B39AF90097D051 /* 55.png in Resources */,
 				1C973ADF18B39AF90097D051 /* mushroom.png in Resources */,
 				1C973ABF18B39AF90097D051 /* 38.png in Resources */,
 				1C973B1818B39AF90097D051 /* star.png in Resources */,
+				1C426B2F18B957D60058291B /* ShoppingCartController.xib in Resources */,
 				1C973AB618B39AF90097D051 /* 29.png in Resources */,
 				1C973AB418B39AF90097D051 /* 26.png in Resources */,
 				1C973AA818B39AF90097D051 /* 196.png in Resources */,
@@ -959,14 +1036,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C973B1718B39AF90097D051 /* RestObject.m in Sources */,
+				1C4A866D18B9A37700F896B9 /* MHTabBarController.m in Sources */,
 				1C973B1518B39AF90097D051 /* RecipeListViewController.m in Sources */,
+				1C426B3618B9644B0058291B /* ShoppingCartRowCell.m in Sources */,
 				1C973AE818B39AF90097D051 /* MPFlipViewController.m in Sources */,
 				1C973B1218B39AF90097D051 /* Recipe.m in Sources */,
 				1C973B0818B39AF90097D051 /* IngredientsViewController.m in Sources */,
 				1C973AEA18B39AF90097D051 /* ContentViewController.m in Sources */,
 				1C973B1D18B39AF90097D051 /* UserAccountViewController.m in Sources */,
 				1C973AE918B39AF90097D051 /* MPTransition.m in Sources */,
-				1C973B1F18B39AF90097D051 /* UTilities.m in Sources */,
+				1C426B4118B9842D0058291B /* ShoppingCart.m in Sources */,
+				1C973B1F18B39AF90097D051 /* Utilities.m in Sources */,
 				1C973B0A18B39AF90097D051 /* LoginViewController.m in Sources */,
 				1C973AEC18B39AF90097D051 /* DetailViewController.m in Sources */,
 				1C973AE718B39AF90097D051 /* MPFlipTransition.m in Sources */,
@@ -976,9 +1056,11 @@
 				1C973B1018B39AF90097D051 /* PropertyConfigViewController.m in Sources */,
 				1C973B1918B39AF90097D051 /* StepsViewController.m in Sources */,
 				1C973AE618B39AF90097D051 /* MPAnimation.m in Sources */,
+				1C426B4418B984830058291B /* ShoppingCartItem.m in Sources */,
 				1C9739CF18B39AB20097D051 /* main.m in Sources */,
 				1C973B2018B39AF90097D051 /* YummlyClient.m in Sources */,
 				1C973B0F18B39AF90097D051 /* NSDictionary+CPAdditions.m in Sources */,
+				1C426B2E18B957D60058291B /* ShoppingCartController.m in Sources */,
 				1C973B1318B39AF90097D051 /* RecipeCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

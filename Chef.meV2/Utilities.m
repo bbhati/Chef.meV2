@@ -100,4 +100,18 @@
     return coloredImage;
 }
 
++ (NSString* ) getUserId {
+
+    NSString* UUID = nil;
+    UUID = [[NSUserDefaults standardUserDefaults] objectForKey:@"UUID"];
+
+    if(UUID == nil) {
+        UUID = [[NSUUID UUID] UUIDString];
+        [[NSUserDefaults standardUserDefaults] setObject:UUID forKey:@"UUID"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
+    NSLog(@"UUID %@", UUID);
+    return UUID;
+}
 @end
