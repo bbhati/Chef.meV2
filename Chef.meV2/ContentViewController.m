@@ -14,6 +14,7 @@
 
 @property (assign, nonatomic, getter = isRotating) BOOL rotating;
 @property(nonatomic) NSArray* categories;
+-(void)addScrollingGradientToView:(UIImageView*)imageView;
 @end
 
 @implementation ContentViewController
@@ -221,9 +222,38 @@
 
 -(void) setImage: (NSString*)image label: (NSString*)label category:(UIImageView*)category catLabel:(UILabel*)catLabel{
     [category setImage:[UIImage imageNamed:image]];
+    [self addScrollingGradientToView:category];
     [catLabel setText:label];
+    [catLabel setTextColor:[UIColor blackColor]];
 
 }
+
+-(void)addScrollingGradientToView:(UIImageView*)imageView
+{
+    imageView.backgroundColor = [ UIColor clearColor ] ;
+    imageView.opaque = NO;
+    //add in the gradient to show scrolling
+    CAGradientLayer *nextImageFade = [CAGradientLayer layer];
+    nextImageFade.frame = imageView.bounds;
+    
+    nextImageFade.colors =  //@[[UIColor whiteColor], [UIColor blackColor]];
+                            [NSArray arrayWithObjects:(id)[[UIColor whiteColor] CGColor], (id)[[UIColor whiteColor] CGColor], (id)[[UIColor clearColor] CGColor], nil];
+//                            [NSArray arrayWithObjects:(id)
+//                            [UIColor colorWithRed:0. green:0. blue:0. alpha:0.0].CGColor,
+//                            [UIColor colorWithRed:0. green:0. blue:0. alpha:1.0].CGColor,
+//                            [UIColor colorWithRed:0. green:0. blue:0. alpha:1.0].CGColor,
+//                            [UIColor colorWithRed:0. green:0. blue:0. alpha:0.0].CGColor,nil];
+    //nextImageFade.locations = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0.0],
+     //                          [NSNumber numberWithFloat:20 / imageView.frame.size.height],
+      //                         [NSNumber numberWithFloat:(imageView.frame.size.height - 20) / imageView.frame.size.height],
+       //                        [NSNumber numberWithFloat:1.], nil];
+    nextImageFade.startPoint = CGPointMake(.5, 0);
+    nextImageFade.endPoint = CGPointMake(.5, 1);
+    
+    //Put in the fading last so that it is above everything else
+    [imageView.layer setMask:nextImageFade];
+}
+
 
 - (BOOL)prefersStatusBarHidden {
     return YES;

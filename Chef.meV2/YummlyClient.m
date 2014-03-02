@@ -46,7 +46,7 @@ filters: ingredient, cuisine, course, holiday, time, nutrition, and taste restri
 }
 
 + (NSArray* ) categories {
-    NSArray *categories = [NSArray arrayWithObjects:@"Main Dishes", @"Desserts", @"Side Dishes", @"Lunch and Snacks", @"Appetizers", @"Salads", @"Breads", @"Breakfast and Brunch", @"Soups", @"Beverages", @"Condiments and Sauces", @"Cocktails", @"Romantic" ,@"Cakes", @"Gluten free", @"Low Carb", @"High Protein", @"Flavorful Italian", @"Southern & Soul Food", @"Savory French", @"Yummy Chinese", @"Tasty Mexican", nil];
+    NSArray *categories = [NSArray arrayWithObjects:@"Main Dishes", @"Dessert", @"Side Dishes", @"Lunch and Snacks", @"Appetizers", @"Salads", @"Breads", @"Breakfast and Brunch", @"Soups", @"Beverages", @"Condiments and Sauces", @"Cocktails", @"American" ,@"French", @"Italian", @"Chinese", @"Mexican", @"Cakes", @"High Protein", @"Vegan", @"Low Carb", @"Gluten Free", nil];
     return categories;
     
 }
