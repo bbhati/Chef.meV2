@@ -56,7 +56,9 @@
 }
 
 - (NSArray *)ingredients{
+    NSLog(@"ingredients: %@", [self.data valueOrNilForKeyPath:@"ingredients"]);
     return [self.data valueOrNilForKeyPath:@"ingredients"];
+    
 }
 
 - (NSInteger)rating{

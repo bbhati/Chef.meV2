@@ -23,4 +23,7 @@
 - (void)fetchRecipesWithQuery: (NSString*)query success:(void(^)(AFHTTPRequestOperation *operation, id responseObject))success failure: (void(^)(AFHTTPRequestOperation *operation, NSError *error)) failure;
 
 - (void)fetchRecipeWithId: (NSString*)recipeId success: (void(^)(AFHTTPRequestOperation *operation, id responseObject))success failure: (void(^)(AFHTTPRequestOperation *operation, NSError *error)) failure;
+
+- (void) fetchShoppingCartWithBlock: (void(^)(NSArray *objects, NSError *error)) successErrorBlock;
+
 @end

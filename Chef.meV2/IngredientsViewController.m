@@ -8,12 +8,22 @@
 
 #import "IngredientsViewController.h"
 #import "YummlyClient.h"
+#import "ShoppingCartController.h"
+#import "Parse/Parse.h"
+#import "ShoppingCart.h"
+#import "ShoppingCartItem.h"
+#import "Utilities.h"
 
 @interface IngredientsViewController ()
 - (IBAction)addToCart:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *servings;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (nonatomic) NSMutableArray* ingredients;
+
+- (IBAction)onHome:(id)sender;
+- (IBAction)onShowCart:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *footerView;
+
 @end
 
 @implementation IngredientsViewController
@@ -62,6 +72,35 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
 }
 
 - (IBAction)addToCart:(id)sender {
+    // add recipe to shopping cart
+    //
+//    NSMutableArray* shoppingCart = [[NSUserDefaults standardUserDefaults] objectForKey:@"shoppingCart"];
+//    if(shoppingCart == nil) {
+//        shoppingCart = [[NSMutableArray alloc] init];
+//        [shoppingCart addObject:self.recipe.id];
+//    }
+//    
+//    [[NSUserDefaults standardUserDefaults] setObject:shoppingCart forKey:@"shoppingCart"];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    //store to parse
+    [Parse setApplicationId:@"G0eP59QGmBZWO2v4klysid1aDMvkVcMwmoHbAd3U" clientKey:@"JYQQiB2CVxXS0olE122ZQbpnb00GmCJEO4nucrOI"];
+
+    NSDictionary* recipe = [NSDictionary dictionaryWithObject:self.recipe forKey:@"recipe"];
+
+    NSMutableDictionary * md = [recipe mutableCopy];
+    
+    NSString* qty = self.servings.text;
+    [md setObject:qty forKey:@"quantity"];
+
+    NSLog(@"ingredients %@", self.recipe.ingredients);
+    PFObject *item = [PFObject objectWithClassName:@"ShoppingCart"];
+    item[@"quantity"] = qty;
+    item[@"ingredients"] = self.recipe.ingredients;
+    item[@"recipe"] = self.recipe.id;
+    item[@"recipeDetail"] = self.recipe.data;
+    item[@"userId"] = [Utilities getUserId];
+    [item saveInBackground];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -101,8 +140,13 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
     [[YummlyClient instance] fetchRecipeWithId:recipeId success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Success!!!");
         NSLog(@"%@", responseObject);
-        NSDictionary* dict = (NSDictionary*) responseObject;
+        //NSDictionary* dict = (NSDictionary*) responseObject;
+        
+        NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithDictionary:(NSDictionary*) responseObject];
+        [dict addEntriesFromDictionary:self.recipe.data];
         Recipe* obj = [[Recipe alloc] initWithDictionary:dict];
+        
+        
         self.recipe = obj;
 
         [[NSNotificationCenter defaultCenter] postNotificationName:loadedRecipeNotification
@@ -117,4 +161,13 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
     }];
 }
 
+- (IBAction)onHome:(id)sender {
+
+}
+
+- (IBAction)onShowCart:(id)sender {
+    ShoppingCartController* cartController = [[ShoppingCartController alloc] init];
+
+    [self.navigationController pushViewController:cartController animated:YES];
+}
 @end

@@ -14,7 +14,7 @@ http://www.yummly.com/recipes?q=breakfast
  http://www.yummly.com/api/keywords?q=brea&yv=19010594-dbe4-496f-9e93-4e19d5a3544e
  
  http://www.yummly.com/browse/seasonal
- 
+ Chef.meV2/Chef.meV2.xcworkspace
 Popular now http://www.yummly.com/browse/popular-now
 filters: ingredient, cuisine, course, holiday, time, nutrition, and taste restrictions
  
@@ -24,6 +24,8 @@ filters: ingredient, cuisine, course, holiday, time, nutrition, and taste restri
  */
 
 #import "YummlyClient.h"
+#import "Parse/Parse.h"
+#import "Utilities.h"
 
 #define YUMMLY_BASE_URL @"http://api.yummly.com/v1/api"
 //#define BIGOVEN_BASE_URL @"http://api.bigoven.com/recipes"
@@ -31,7 +33,11 @@ filters: ingredient, cuisine, course, holiday, time, nutrition, and taste restri
 
 #define APP_ID @"c477e0ed"
 #define APP_KEY @"331036844c49afdc4f414ca8abd56f6b"
-//#define BIGOVEN_APP_KEY @"dvxWm3euBAn6E4fDrqcK2Y9D5020401z"
+
+#define PARSE_APP_ID @"G0eP59QGmBZWO2v4klysid1aDMvkVcMwmoHbAd3U"
+#define PARSE_APP_KEY @"JYQQiB2CVxXS0olE122ZQbpnb00GmCJEO4nucrOI"
+
+
 @implementation YummlyClient
 
 + (YummlyClient *)instance {
@@ -76,5 +82,16 @@ filters: ingredient, cuisine, course, holiday, time, nutrition, and taste restri
     [url appendString:recipeGet];
     NSLog(@"URL: %@", [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]);
     [manager GET:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:nil success:success failure:failure];
+}
+
+- (void) fetchShoppingCartWithBlock: (void(^)(NSArray *objects, NSError *error)) successErrorBlock  {
+    
+    [Parse setApplicationId:PARSE_APP_ID clientKey:PARSE_APP_KEY];
+    
+        PFQuery *query = [PFQuery queryWithClassName:@"ShoppingCart"];
+        NSString* userId = [Utilities getUserId];
+        [query whereKey:@"userId" equalTo:userId];
+    
+        [query findObjectsInBackgroundWithBlock:successErrorBlock];
 }
 @end
