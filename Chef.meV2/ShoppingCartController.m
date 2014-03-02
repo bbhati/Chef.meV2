@@ -47,6 +47,8 @@
 
     self.table.delegate = self;
     self.table.dataSource = self;
+    
+    [self reload];
 }
 
 - (void)didReceiveMemoryWarning

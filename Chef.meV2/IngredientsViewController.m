@@ -98,7 +98,7 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
     item[@"quantity"] = qty;
     item[@"ingredients"] = self.recipe.ingredients;
     item[@"recipe"] = self.recipe.id;
-    item[@"recipeDetail"] = self.recipe;
+    item[@"recipeDetail"] = self.recipe.data;
     item[@"userId"] = [Utilities getUserId];
     [item saveInBackground];
 }

@@ -23,11 +23,13 @@
 }
 
 -(NSString*)recipeId{
-    return [self.data valueForKey:@"recipeId"];
+    return [self.data valueForKey:@"recipe"];
 }
 
 -(Recipe*)recipeDetail {
-    Recipe* recipe = [[Recipe alloc] initWithDictionary:[self.data valueForKey:@"recipeDetail"]];
+    Recipe* recipe;
+    NSDictionary* recipeDictionary = [self.data valueForKey:@"recipeDetail"];
+    recipe = [[Recipe alloc] initWithDictionary:recipeDictionary];
     return recipe;
 }
 
