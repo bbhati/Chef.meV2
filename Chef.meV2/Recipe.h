@@ -10,6 +10,7 @@
 
 @interface Recipe : RestObject
 + (NSMutableArray *)recipesWithArray:(NSArray *)array;
++ (NSMutableArray *)recipesParseWithArray:(NSArray *)array;
 @property (nonatomic, strong, readonly) NSString* id;
 @property (nonatomic, strong, readonly) NSDictionary* imageUrlsBySize;
 @property (nonatomic, strong, readonly) NSArray* ingredients;

@@ -12,4 +12,5 @@
 
 @property (nonatomic, strong) NSString* category;
 extern NSString* selectedRecipeNotification;
+- (id)initWithCategory:(NSString *)category;
 @end

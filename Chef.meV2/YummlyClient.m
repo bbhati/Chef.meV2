@@ -52,7 +52,7 @@ filters: ingredient, cuisine, course, holiday, time, nutrition, and taste restri
 }
 
 + (NSArray* ) categories {
-    NSArray *categories = [NSArray arrayWithObjects:@"Main Dishes", @"Desserts", @"Side Dishes", @"Lunch and Snacks", @"Appetizers", @"Salads", @"Breads", @"Breakfast and Brunch", @"Soups", @"Beverages", @"Condiments and Sauces", @"Cocktails", @"Romantic" ,@"Cakes", @"Gluten free", @"Low Carb", @"High Protein", @"Flavorful Italian", @"Southern & Soul Food", @"Savory French", @"Yummy Chinese", @"Tasty Mexican", nil];
+    NSArray *categories = [NSArray arrayWithObjects:@"Main Dishes", @"Dessert", @"Side Dishes", @"Lunch and Snacks", @"Appetizers", @"Salads", @"Breads", @"Breakfast and Brunch", @"Soups", @"Beverages", @"Condiments and Sauces", @"Cocktails", @"American" ,@"French", @"Italian", @"Chinese", @"Mexican", @"Cakes", @"High Protein", @"Vegan", @"Low Carb", @"Gluten Free", nil];
     return categories;
     
 }
@@ -69,6 +69,13 @@ filters: ingredient, cuisine, course, holiday, time, nutrition, and taste restri
 
     NSLog(@"URL: %@", [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]);
     [manager GET:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:nil success:success failure:failure];
+}
+
+- (void)fetchRecipesWithCategory: (NSString*)category sucess: (void(^)(NSArray *objects, NSError *error)) successErrorBlock {
+    PFQuery *query = [PFQuery queryWithClassName:@"Recipe"];
+    [query whereKey:@"category" equalTo:category];
+    
+    [query findObjectsInBackgroundWithBlock:successErrorBlock];
 }
 
 - (void)fetchRecipeWithId: (NSString*)recipeId success: (void(^)(AFHTTPRequestOperation *operation, id responseObject))success failure: (void(^)(AFHTTPRequestOperation *operation, NSError *error)) failure {

@@ -50,6 +50,18 @@ NSString* selectedRecipeNotification = @"SelectedRecipeNotification";
     return self;
 }
 
+- (id)initWithCategory:(NSString *)category {
+    self = [super init];
+    if (self) {
+        self.category = category;
+        self.recipes = [[NSMutableArray alloc] init];
+        self.images = [[NSMutableArray alloc] init];
+        [self.tableView registerNib:[UINib nibWithNibName:@"RecipeListCell" bundle:nil] forCellReuseIdentifier:@"RecipeListCell"];
+        [[self navigationController] setNavigationBarHidden:NO animated:YES];
+    }
+    return self;
+}
+
 -(void)viewWillAppear:(BOOL)animated {
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
     [[self navigationController] setToolbarHidden:YES];
@@ -252,25 +264,26 @@ NSString* selectedRecipeNotification = @"SelectedRecipeNotification";
 - (void) reload {
     NSLog(@"Reloading recipes");
     
-    [[YummlyClient instance] fetchRecipesWithQuery:@"" success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Success!!!");
-        NSLog(@"%@", responseObject);
-        NSDictionary* dict = (NSDictionary*) responseObject;
-        self.recipes = [Recipe recipesWithArray:[dict objectForKey:@"matches"]];
-        //download images
-
-        for(int index =0 ; index < self.recipes.count; index++) {
-//            NSInteger index = [self.recipes indexOfObject:recipe];
-            Recipe* recipe = [self.recipes objectAtIndex:index];
-            UITableViewCell* dummy = [[UITableViewCell alloc] init];
-            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: recipe.image90]
-                                                                   cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-                                                               timeoutInterval:10000];
-            [request setHTTPMethod:@"GET"];
-
+    [[YummlyClient instance] fetchRecipesWithCategory:self.category sucess: ^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            // Do something with the found objects
+            //self.recipes = [Recipe recipesWithArray:objects];
+            self.recipes = [Recipe recipesParseWithArray:objects];
+            
+            for(int index =0 ; index < self.recipes.count; index++) {
+                //            NSInteger index = [self.recipes indexOfObject:recipe];
+                Recipe* recipe = [self.recipes objectAtIndex:index];
+                UITableViewCell* dummy = [[UITableViewCell alloc] init];
+                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: recipe.image90]
+                                                                       cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                                   timeoutInterval:10000];
+                [request setHTTPMethod:@"GET"];
+                
                 [dummy.imageView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
                     ////resize
-            
+                    
                     [self.images addObject:image];
                     if(index == self.recipes.count -1) {
                         self.downloadedImages = YES;
@@ -283,12 +296,52 @@ NSString* selectedRecipeNotification = @"SelectedRecipeNotification";
                         [self.tableView reloadData];
                     }
                 }];
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Failure!!!");
-        NSLog(@"%@", error);
-        
     }];
+
+    
+//    
+//    [[YummlyClient instance] fetchRecipesWithQuery:@"" success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSLog(@"Success!!!");
+//        NSLog(@"%@", responseObject);
+//        NSDictionary* dict = (NSDictionary*) responseObject;
+//        self.recipes = [Recipe recipesWithArray:[dict objectForKey:@"matches"]];
+//        //download images
+//
+//        for(int index =0 ; index < self.recipes.count; index++) {
+////            NSInteger index = [self.recipes indexOfObject:recipe];
+//            Recipe* recipe = [self.recipes objectAtIndex:index];
+//            UITableViewCell* dummy = [[UITableViewCell alloc] init];
+//            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: recipe.image90]
+//                                                                   cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+//                                                               timeoutInterval:10000];
+//            [request setHTTPMethod:@"GET"];
+//
+//                [dummy.imageView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+//                    ////resize
+//            
+//                    [self.images addObject:image];
+//                    if(index == self.recipes.count -1) {
+//                        self.downloadedImages = YES;
+//                        [self.tableView reloadData];
+//                    }
+//                } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+//                    NSLog(@"Failed to load image");
+//                    if(index == self.recipes.count -1) {
+//                        self.downloadedImages = YES;
+//                        [self.tableView reloadData];
+//                    }
+//                }];
+//        }
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        NSLog(@"Failure!!!");
+//        NSLog(@"%@", error);
+//        
+//    }];
 }
 
 @end
