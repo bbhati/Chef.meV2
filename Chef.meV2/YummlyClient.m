@@ -71,6 +71,13 @@ filters: ingredient, cuisine, course, holiday, time, nutrition, and taste restri
     [manager GET:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:nil success:success failure:failure];
 }
 
+- (void)fetchRecipesWithCategory: (NSString*)category sucess: (void(^)(NSArray *objects, NSError *error)) successErrorBlock {
+    PFQuery *query = [PFQuery queryWithClassName:@"Recipe"];
+    [query whereKey:@"category" equalTo:category];
+    
+    [query findObjectsInBackgroundWithBlock:successErrorBlock];
+}
+
 - (void)fetchRecipeWithId: (NSString*)recipeId success: (void(^)(AFHTTPRequestOperation *operation, id responseObject))success failure: (void(^)(AFHTTPRequestOperation *operation, NSError *error)) failure {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];

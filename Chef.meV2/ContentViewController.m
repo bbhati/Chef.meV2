@@ -285,7 +285,7 @@
 - (void) handleTapOnCategory:(NSString*) category{
     NSLog(@"Handled touch on %@", category);
     //load view controller
-    RecipeListViewController *controller = [[RecipeListViewController alloc] init];
+    RecipeListViewController *controller = [[RecipeListViewController alloc] initWithCategory:category];
     controller.category = category;
     [self.navigationController pushViewController:controller animated:YES];
     

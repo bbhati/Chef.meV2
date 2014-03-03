@@ -7,6 +7,7 @@
 //
 
 #import "Recipe.h"
+#import "Parse/Parse.h"
 
 @implementation Recipe
 
@@ -161,6 +162,18 @@
         [recipes addObject:[[Recipe alloc] initWithDictionary:params]];
     }
     
+    return recipes;
+}
+
++ (NSMutableArray *)recipesParseWithArray:(NSArray *)array {
+    NSMutableArray *recipes = [[NSMutableArray alloc] initWithCapacity:array.count];
+    for (PFObject *params in array) {
+        NSString *str = [params objectForKey:@"recipeOverview"];
+        NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+  //      NSData *data = [[NSData alloc] initWithBase64EncodedString:str options:kNilOptions];
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        [recipes addObject:[[Recipe alloc] initWithDictionary:dictionary]];
+    }
     return recipes;
 }
 @end
