@@ -16,6 +16,7 @@
 @property(nonatomic)NSInteger price;
 @property(nonatomic)NSInteger quantity;
 @property(nonatomic)NSString* recipeId;
+@property(nonatomic)NSDictionary* recipeDetail;
 
 + (NSMutableArray *)itemWithArray:(NSArray *)array;
 @end

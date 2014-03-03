@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController">
             <connections>
+                <outlet property="nameView" destination="rQH-Ie-F9G" id="qn0-qY-YI1"/>
                 <outlet property="recipeImage" destination="mSK-wV-jcF" id="oTl-iU-Ga1"/>
+                <outlet property="recipeName" destination="OEf-gN-Ej6" id="BeX-zh-5p5"/>
+                <outlet property="sourceDetail" destination="d6f-fJ-wgZ" id="6M1-Vl-gYi"/>
+                <outlet property="sourceName" destination="Yzq-0w-BNi" id="J8A-Mf-pOM"/>
                 <outlet property="view" destination="QX7-yM-6Gd" id="JUv-dx-1Al"/>
             </connections>
         </placeholder>
@@ -17,16 +21,61 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mSK-wV-jcF">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="468"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="363"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQH-Ie-F9G">
+                    <rect key="frame" x="0.0" y="362" width="320" height="91"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Cocoa Brownies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEf-gN-Ej6">
+                            <rect key="frame" x="20" y="35" width="216" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="OEf-gN-Ej6" firstAttribute="leading" secondItem="rQH-Ie-F9G" secondAttribute="leading" constant="20" id="AYE-mr-gbI"/>
+                        <constraint firstItem="OEf-gN-Ej6" firstAttribute="top" secondItem="rQH-Ie-F9G" secondAttribute="top" constant="35" id="XXM-Hc-xUY"/>
+                        <constraint firstAttribute="trailing" secondItem="OEf-gN-Ej6" secondAttribute="trailing" constant="84" id="ynE-8N-32h"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d6f-fJ-wgZ">
+                    <rect key="frame" x="0.0" y="453" width="320" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Martha Stewert" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yzq-0w-BNi">
+                            <rect key="frame" x="20" y="16" width="280" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Yzq-0w-BNi" secondAttribute="trailing" constant="20" id="4cP-h4-l1H"/>
+                        <constraint firstItem="Yzq-0w-BNi" firstAttribute="top" secondItem="d6f-fJ-wgZ" secondAttribute="top" constant="16" id="aDe-wC-aWr"/>
+                        <constraint firstItem="Yzq-0w-BNi" firstAttribute="leading" secondItem="d6f-fJ-wgZ" secondAttribute="leading" constant="20" id="nTX-ki-ehh"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="rQH-Ie-F9G" firstAttribute="top" secondItem="mSK-wV-jcF" secondAttribute="bottom" constant="-1" id="CRg-iq-SNd"/>
+                <constraint firstAttribute="bottom" secondItem="d6f-fJ-wgZ" secondAttribute="bottom" constant="55" id="EcL-ZQ-TRg"/>
                 <constraint firstItem="mSK-wV-jcF" firstAttribute="top" secondItem="QX7-yM-6Gd" secondAttribute="top" id="Hxf-Yx-SHk"/>
+                <constraint firstItem="d6f-fJ-wgZ" firstAttribute="trailing" secondItem="rQH-Ie-F9G" secondAttribute="trailing" id="LG1-xY-dxQ"/>
                 <constraint firstItem="mSK-wV-jcF" firstAttribute="leading" secondItem="QX7-yM-6Gd" secondAttribute="leading" id="M9u-m4-yxW"/>
                 <constraint firstAttribute="trailing" secondItem="mSK-wV-jcF" secondAttribute="trailing" id="MWZ-dv-b7z"/>
-                <constraint firstAttribute="bottom" secondItem="mSK-wV-jcF" secondAttribute="bottom" constant="100" id="Y0v-Rl-qBV"/>
+                <constraint firstItem="d6f-fJ-wgZ" firstAttribute="leading" secondItem="rQH-Ie-F9G" secondAttribute="leading" id="TGk-bb-qXP"/>
+                <constraint firstAttribute="bottom" secondItem="mSK-wV-jcF" secondAttribute="bottom" constant="205" id="Y0v-Rl-qBV"/>
+                <constraint firstAttribute="bottom" secondItem="rQH-Ie-F9G" secondAttribute="bottom" constant="115" id="asK-Yw-I7S"/>
+                <constraint firstAttribute="trailing" secondItem="rQH-Ie-F9G" secondAttribute="trailing" id="imL-eI-hXg"/>
+                <constraint firstItem="rQH-Ie-F9G" firstAttribute="leading" secondItem="QX7-yM-6Gd" secondAttribute="leading" id="ohI-RD-fwd"/>
+                <constraint firstItem="d6f-fJ-wgZ" firstAttribute="top" secondItem="rQH-Ie-F9G" secondAttribute="bottom" id="p4s-60-rwx"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

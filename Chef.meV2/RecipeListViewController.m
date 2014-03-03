@@ -235,6 +235,7 @@ NSString* selectedRecipeNotification = @"SelectedRecipeNotification";
     
     
     StepsViewController* stepsVC =[[StepsViewController alloc] init];
+    stepsVC.recipe = recipe;
     stepsVC.tabBarItem.title = @"Steps";
     
     NSArray* controllers = [NSArray arrayWithObjects:detailViewController, ingVC, stepsVC, nil];

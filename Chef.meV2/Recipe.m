@@ -47,12 +47,22 @@
 }
 
 - (NSString *)sourceDisplayName {
-    return [self.data valueOrNilForKeyPath:@"sourceDisplayName"];
+    return [self.data valueOrNilForKeyPath:@"source.sourceDisplayName"];
+}
+
+- (NSString *)sourceRecipeUrl {
+    return [self.data valueOrNilForKeyPath:@"source.sourceRecipeUrl"];
 }
 
 - (NSString *)recipeName {
-    NSLog(@"recipe: %@", [self.data valueOrNilForKeyPath:@"recipeName"]);
-    return [self.data valueOrNilForKeyPath:@"recipeName"];
+
+    NSString* recipeName = [self.data valueOrNilForKeyPath:@"recipeName"];
+
+    if(recipeName == nil){
+        recipeName = [self.data valueOrNilForKeyPath:@"name"];
+    }
+    NSLog(@"recipe: %@", recipeName);
+    return recipeName;
 }
 
 - (NSArray *)ingredients{

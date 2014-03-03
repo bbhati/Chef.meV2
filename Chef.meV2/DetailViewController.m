@@ -43,6 +43,8 @@
         NSLog(@"Notification received: %@", notification);
         if(notification != nil){
             [self.recipeImage setImageWithURL:[NSURL URLWithString:self.recipe.largeImageURL]];
+            self.recipeName.text = self.recipe.recipeName;
+            self.sourceName.text = self.recipe.sourceDisplayName;
         }
 
 }

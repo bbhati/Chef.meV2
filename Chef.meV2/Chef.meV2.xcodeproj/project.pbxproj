@@ -661,9 +661,6 @@
 				1C973A8218B39AF80097D051 /* RecipeCell.h */,
 				1C973A8318B39AF80097D051 /* RecipeCell.m */,
 				1C426B3218B95C8D0058291B /* TabbedViewFooter.xib */,
-				1C426B3418B9644B0058291B /* ShoppingCartRowCell.h */,
-				1C426B3518B9644B0058291B /* ShoppingCartRowCell.m */,
-				1C426B3918B9657B0058291B /* ShoppingCartRowCell.xib */,
 				1C426B4218B984830058291B /* ShoppingCartItem.h */,
 				1C426B4318B984830058291B /* ShoppingCartItem.m */,
 			);
@@ -680,6 +677,9 @@
 		1C973B2318B39B280097D051 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1C426B3418B9644B0058291B /* ShoppingCartRowCell.h */,
+				1C426B3518B9644B0058291B /* ShoppingCartRowCell.m */,
+				1C426B3918B9657B0058291B /* ShoppingCartRowCell.xib */,
 				1C426B2B18B957D60058291B /* ShoppingCartController.h */,
 				1C426B2C18B957D60058291B /* ShoppingCartController.m */,
 				1C426B2D18B957D60058291B /* ShoppingCartController.xib */,
