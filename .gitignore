@@ -1,7 +1,6 @@
 *.DS_Store
 Chef.meV2/Chef.meV2.xcworkspace/
 Chef.meV2/Chef.meV2.xcodeproj/xcuserdata/
-*.pbxproj
 
 Chef.meV2/Chef.meV2.xcodeproj/project.xcworkspace/xcuserdata/kshah.xcuserdatad/
 Chef.meV2/Pods/Pods.xcodeproj/xcuserdata/kshah.xcuserdatad/
