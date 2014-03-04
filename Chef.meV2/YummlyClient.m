@@ -101,4 +101,26 @@ filters: ingredient, cuisine, course, holiday, time, nutrition, and taste restri
     
         [query findObjectsInBackgroundWithBlock:successErrorBlock];
 }
+
+- (void) removeShoppingCartItem:(NSString*)recipeId WithBlock: (void(^)(NSArray *objects, NSError *error)) successErrorBlock  {
+    
+    [Parse setApplicationId:PARSE_APP_ID clientKey:PARSE_APP_KEY];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"ShoppingCart"];
+    NSString* userId = [Utilities getUserId];
+    [query whereKey:@"userId" equalTo:userId];
+    
+    [query findObjectsInBackgroundWithBlock:successErrorBlock];
+}
+
+- (void) getPriceForIngredient:(NSString*)name block:(void(^)(NSArray *objects, NSError *error)) successErrorBlock  {
+    
+    [Parse setApplicationId:PARSE_APP_ID clientKey:PARSE_APP_KEY];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Ingredients"];
+
+    [query whereKey:@"name" containsString:name];
+    
+    [query findObjectsInBackgroundWithBlock:successErrorBlock];
+}
 @end

@@ -24,6 +24,8 @@
 - (IBAction)onShowCart:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *footerView;
 
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define FONT_SIZE 14.0
 @end
 
 @implementation IngredientsViewController
@@ -73,15 +75,6 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
 
 - (IBAction)addToCart:(id)sender {
     // add recipe to shopping cart
-    //
-//    NSMutableArray* shoppingCart = [[NSUserDefaults standardUserDefaults] objectForKey:@"shoppingCart"];
-//    if(shoppingCart == nil) {
-//        shoppingCart = [[NSMutableArray alloc] init];
-//        [shoppingCart addObject:self.recipe.id];
-//    }
-//    
-//    [[NSUserDefaults standardUserDefaults] setObject:shoppingCart forKey:@"shoppingCart"];
-//    [[NSUserDefaults standardUserDefaults] synchronize];
     
     //store to parse
     [Parse setApplicationId:@"G0eP59QGmBZWO2v4klysid1aDMvkVcMwmoHbAd3U" clientKey:@"JYQQiB2CVxXS0olE122ZQbpnb00GmCJEO4nucrOI"];
@@ -110,17 +103,20 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
+    NSString* cellText = [self.ingredients objectAtIndex:indexPath.row];
     if (cell == nil) {
         // Create the cell and add the labels
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake( 0.0f, 0.0f, 320.0f, 44.0f)];
+        float height = [self textSize:cellText constrainedToSize:CGSizeMake(280, FLT_MAX)].height;
+        
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake( 0.0f, 0.0f, 280.0f, height)];
+        titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        titleLabel.numberOfLines = 0;
         titleLabel.tag = 1;
         titleLabel.textAlignment = NSTextAlignmentLeft;
-        titleLabel.font = [UIFont boldSystemFontOfSize:13.0f];
+        titleLabel.font = [UIFont boldSystemFontOfSize:14.0f];
         titleLabel.backgroundColor = [UIColor clearColor];
-        
+
         [cell.contentView addSubview:titleLabel];
     }
   
@@ -129,7 +125,7 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
     // Access labels in the cell using the tag #
     UILabel *titleLabel = (UILabel *)[cell viewWithTag:1];
     // Display the data in the table
-    titleLabel.text = [self.ingredients objectAtIndex:indexPath.row];
+    titleLabel.text = cellText;
 //    dataLabel.text = [self.rowDataArray objectAtIndex:indexPath.row];
     return cell;
 }
@@ -160,6 +156,59 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
         
     }];
 }
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44.0f;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+  
+        NSLog(@"Calculating height for content %@", [self.ingredients objectAtIndex:indexPath.row]);
+        
+        NSString* content = [self.ingredients objectAtIndex:indexPath.row];
+        float horizontalPadding = 40;
+        
+        float widthOfTextView = self.table.bounds.size.width;
+        widthOfTextView = widthOfTextView - horizontalPadding;
+        
+        float height = [self textSize:content constrainedToSize:CGSizeMake(widthOfTextView, FLT_MAX)].height;
+        
+        
+        if(height < 44){
+            height = 44;
+        }
+        
+        NSLog(@"Content height: %f", height);
+        
+        return height + 15;
+   
+    
+}
+
+- (CGSize)textSize:(NSString *)text constrainedToSize:(CGSize)size
+{
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+    {
+        NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:14]};
+        CGRect frame = [text boundingRectWithSize:size
+                                          options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+                                       attributes:attributes
+                                          context:nil];
+        NSLog(@"Bound size: height %f", size.height);
+        NSLog(@"Bound size: width %f", size.width);
+        NSLog(@"Frame size: height %f", frame.size.height);
+        NSLog(@"Frame size: width %f", frame.size.width);
+        return frame.size;
+    }
+    else
+    {
+        return [text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:size];
+    }
+}
+
 
 - (IBAction)onHome:(id)sender {
 

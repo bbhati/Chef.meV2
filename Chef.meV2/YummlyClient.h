@@ -29,4 +29,6 @@
 
 - (void) fetchShoppingCartWithBlock: (void(^)(NSArray *objects, NSError *error)) successErrorBlock;
 
+- (void) getPriceForIngredient:(NSString*)name block:(void(^)(NSArray *objects, NSError *error)) successErrorBlock;
+
 @end

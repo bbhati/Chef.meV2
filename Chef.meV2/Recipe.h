@@ -19,7 +19,7 @@
 @property (nonatomic, strong, readonly) NSArray* smallImageUrls;
 @property (nonatomic, readonly) NSInteger totalTimeInSeconds;
 @property (nonatomic, strong, readonly) NSString* sourceDisplayName;
-
+@property (nonatomic, strong, readonly) NSString* sourceRecipeUrl;
 //from detailed view
 @property (nonatomic, strong, readonly) NSArray* images;
 @property (nonatomic, strong, readonly) NSArray* ingredientLines;

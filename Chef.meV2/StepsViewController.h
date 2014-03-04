@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe.h"
 
 @interface StepsViewController : UIViewController
+@property(nonatomic, strong) Recipe* recipe;
 
 @end
