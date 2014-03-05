@@ -53,33 +53,31 @@
     }
     
     self.categories = [YummlyClient categories];
-
-    @"Main Dishes", @"Dessert", @"Side Dishes", @"Lunch and Snacks", @"Appetizers", @"Salads", @"Breads", @"Breakfast and Brunch", @"Soups", @"Beverages", @"Condiments and Sauces", @"Cocktails", @"American" ,@"French", @"Italian", @"Chinese", @"Mexican", @"Cakes", @"High Protein", @"Vegan", @"Low Carb", @"Gluten Free",
-    
+  
     self.imageNames = [[NSMutableDictionary alloc] init];
     
-    [self.imageNames setObject:@"image1" forKey:@"Main Dishes"];
-    [self.imageNames setObject:@"image22" forKey:@"Dessert"];
-    [self.imageNames setObject:@"sideDish" forKey:@"Side Dishes"];
-    [self.imageNames setObject:@"image11" forKey:@"Lunch and Snacks"];
-    [self.imageNames setObject:@"image9" forKey:@"Appetizers"];
-    [self.imageNames setObject:@"" forKey:@"Salads"];
-    [self.imageNames setObject:@"" forKey:@"Breads"];
-    [self.imageNames setObject:@"" forKey:@"Breakfast and Brunch"];
-    [self.imageNames setObject:@"image8" forKey:@"Soups"];
-    [self.imageNames setObject:@"image7" forKey:@"Beverages"];
-    [self.imageNames setObject:@"" forKey:@"Condiments and Sauces"];
-    [self.imageNames setObject:@"" forKey:@"Cocktails"];
-    [self.imageNames setObject:@"american" forKey:@"American"];
-    [self.imageNames setObject:@"french" forKey:@"French"];
-    [self.imageNames setObject:@"italian" forKey:@"Italian"];
-    [self.imageNames setObject:@"chinese" forKey:@"Chinese"];
-    [self.imageNames setObject:@"mexican" forKey:@"Mexican"];
-    [self.imageNames setObject:@"image2" forKey:@"Cakes"];
-    [self.imageNames setObject:@"" forKey:@"High Protein"];
-    [self.imageNames setObject:@"" forKey:@"Vegan"];
-    [self.imageNames setObject:@"" forKey:@"Low Carb"];
-    [self.imageNames setObject:@"" forKey:@"Gluten Free"];
+    [self.imageNames setObject:@"image1.jpg" forKey:@"Main Dishes"];
+    [self.imageNames setObject:@"image22.jpg" forKey:@"Dessert"];
+    [self.imageNames setObject:@"sideDish.jpg" forKey:@"Side Dishes"];
+    [self.imageNames setObject:@"image11.jpg" forKey:@"Lunch and Snacks"];
+    [self.imageNames setObject:@"image9.jpg" forKey:@"Appetizers"];
+    [self.imageNames setObject:@"salads.jpg" forKey:@"Salads"];
+    [self.imageNames setObject:@"breads.jpg" forKey:@"Breads"];
+    [self.imageNames setObject:@"image4.jpg" forKey:@"Breakfast and Brunch"];
+    [self.imageNames setObject:@"image8.jpg" forKey:@"Soups"];
+    [self.imageNames setObject:@"image7.jpg" forKey:@"Beverages"];
+    [self.imageNames setObject:@"condiments.jpg" forKey:@"Condiments and Sauces"];
+    [self.imageNames setObject:@"cocktails.jpg" forKey:@"Cocktails"];
+    [self.imageNames setObject:@"american.jpg" forKey:@"American"];
+    [self.imageNames setObject:@"french.jpg" forKey:@"French"];
+    [self.imageNames setObject:@"italian.jpg" forKey:@"Italian"];
+    [self.imageNames setObject:@"chinese.jpg" forKey:@"Chinese"];
+    [self.imageNames setObject:@"mexican.jpg" forKey:@"Mexican"];
+    [self.imageNames setObject:@"image2.jpg" forKey:@"Cakes"];
+    [self.imageNames setObject:@"high_protein.jpg" forKey:@"High Protein"];
+    [self.imageNames setObject:@"vegan.jpg" forKey:@"Vegan"];
+    [self.imageNames setObject:@"low_carb.jpg" forKey:@"Low Carb"];
+    [self.imageNames setObject:@"gluten_free.jpg" forKey:@"Gluten Free"];
     
     
     
@@ -105,15 +103,16 @@
 //        }
 //    }
     NSLog(@"Size of currCategories %d", [currCategories count]);
+    NSLog(@"imagename %@", [self.imageNames objectForKey:self.categories[8*(self.pageIndex -1)]] );
     NSLog(@"Categories: %@", currCategories);
-    [currCategories count] > 0 ? [self setImage:currCategories[0] label:self.categories[8*(self.pageIndex-1)] category:[self category1] catLabel:[self label1]]:nil;
-    [currCategories count] > 1 ? [self setImage:currCategories[1] label:self.categories[8*(self.pageIndex -1) + 1] category:[self category2] catLabel:[self label2]]:nil;
-    [currCategories count] > 2 ? [self setImage:currCategories[2] label:self.categories[8*(self.pageIndex-1) + 2] category:[self category3] catLabel:[self label3]]:nil;
-    [currCategories count] > 3 ? [self setImage:currCategories[3] label:self.categories[8*(self.pageIndex-1) +3] category:[self category4] catLabel:[self label4]]:nil;
-    [currCategories count] > 4 ? [self setImage:currCategories[4] label:self.categories[8*(self.pageIndex-1) +4] category:[self category5] catLabel:[self label5]]:nil;
-    [currCategories count] > 5 ? [self setImage:currCategories[5] label:self.categories[8*(self.pageIndex-1) +5] category:[self category6] catLabel:[self label6]]:nil;
-    [currCategories count] > 6 ? [self setImage:currCategories[6] label:self.categories[8*(self.pageIndex-1) +6] category:[self category7] catLabel:[self label7]]:nil;
-    [currCategories count] > 7 ? [self setImage:currCategories[7] label:self.categories[8*(self.pageIndex-1) +7] category:[self category8] catLabel:[self label8]]:nil;
+    [currCategories count] > 0 ? [self setImage:[self.imageNames objectForKey:self.categories[8*(self.pageIndex -1)]] label:self.categories[8*(self.pageIndex-1)] category:[self category1] catLabel:[self label1]]:nil;
+    [currCategories count] > 1 ? [self setImage:[self.imageNames objectForKey:self.categories[8*(self.pageIndex -1) + 1]] label:self.categories[8*(self.pageIndex -1) + 1] category:[self category2] catLabel:[self label2]]:nil;
+    [currCategories count] > 2 ? [self setImage:[self.imageNames objectForKey:self.categories[8*(self.pageIndex -1) + 2]] label:self.categories[8*(self.pageIndex-1) + 2] category:[self category3] catLabel:[self label3]]:nil;
+    [currCategories count] > 3 ? [self setImage:[self.imageNames objectForKey:self.categories[8*(self.pageIndex -1) + 3]] label:self.categories[8*(self.pageIndex-1) +3] category:[self category4] catLabel:[self label4]]:nil;
+    [currCategories count] > 4 ? [self setImage:[self.imageNames objectForKey:self.categories[8*(self.pageIndex -1) + 4]] label:self.categories[8*(self.pageIndex-1) +4] category:[self category5] catLabel:[self label5]]:nil;
+    [currCategories count] > 5 ? [self setImage:[self.imageNames objectForKey:self.categories[8*(self.pageIndex -1) + 5]] label:self.categories[8*(self.pageIndex-1) +5] category:[self category6] catLabel:[self label6]]:nil;
+    [currCategories count] > 6 ? [self setImage:[self.imageNames objectForKey:self.categories[8*(self.pageIndex -1) + 6]] label:self.categories[8*(self.pageIndex-1) +6] category:[self category7] catLabel:[self label7]]:nil;
+    [currCategories count] > 7 ? [self setImage:[self.imageNames objectForKey:self.categories[8*(self.pageIndex -1) + 7]] label:self.categories[8*(self.pageIndex-1) +7] category:[self category8] catLabel:[self label8]]:nil;
     
     self.category1.userInteractionEnabled = YES;
     [currCategories count] > 0? [self.category1 addGestureRecognizer:[[UITapGestureRecognizer alloc]
