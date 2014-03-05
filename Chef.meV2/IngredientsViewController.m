@@ -111,12 +111,14 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
         
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake( 0.0f, 0.0f, 280.0f, height)];
         titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        titleLabel.numberOfLines = 0;
+        titleLabel.numberOfLines = 2;
         titleLabel.tag = 1;
         titleLabel.textAlignment = NSTextAlignmentLeft;
         titleLabel.font = [UIFont boldSystemFontOfSize:14.0f];
         titleLabel.backgroundColor = [UIColor clearColor];
-
+        
+        [titleLabel addConstraint:[NSLayoutConstraint constraintWithItem:cell.contentView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:titleLabel attribute:NSLayoutAttributeTop multiplier:0.5 constant:100]];
+        
         [cell.contentView addSubview:titleLabel];
     }
   
