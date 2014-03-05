@@ -349,7 +349,7 @@ static const NSInteger TagOffset = 1000;
 
 - (void)selectTabButton:(UIButton *)button
 {
-    button.backgroundColor = [UIColor colorWithRed:255./255. green:250./255. blue:240./255. alpha:1];
+    button.backgroundColor = [UIColor grayColor];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
 //	[button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];

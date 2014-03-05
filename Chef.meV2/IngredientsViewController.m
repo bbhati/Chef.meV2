@@ -126,13 +126,17 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
     UILabel *titleLabel = (UILabel *)[cell viewWithTag:1];
     // Display the data in the table
     titleLabel.text = cellText;
+    [titleLabel setFont:[UIFont fontWithName:@"Helvetica-Neue" size:14]];
 //    dataLabel.text = [self.rowDataArray objectAtIndex:indexPath.row];
     
     
     if(indexPath.row % 2 == 0) {
-        cell.contentView.backgroundColor = [[UIColor alloc] initWithRed:255./255. green:(250./255.) blue:240./255. alpha:1];
+//        cell.contentView.backgroundColor = [[UIColor alloc] initWithRed:255./255. green:(250./255.) blue:240./255. alpha:1];
+        cell.contentView.backgroundColor = [UIColor grayColor];
+        titleLabel.textColor = [UIColor whiteColor];
     } else {
         cell.contentView.backgroundColor = [UIColor whiteColor];
+        titleLabel.textColor = [UIColor blackColor];
     }
 
     return cell;
