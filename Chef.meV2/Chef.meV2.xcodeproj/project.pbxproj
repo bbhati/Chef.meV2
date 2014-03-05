@@ -13,6 +13,18 @@
 		1C38D78918C6D1E0007F11B8 /* italian.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D78318C6D1E0007F11B8 /* italian.jpg */; };
 		1C38D78A18C6D1E0007F11B8 /* mexican.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D78418C6D1E0007F11B8 /* mexican.jpg */; };
 		1C38D78B18C6D1E0007F11B8 /* sideDish.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D78518C6D1E0007F11B8 /* sideDish.jpg */; };
+		1C38D79018C6D406007F11B8 /* gluten_free.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D78C18C6D406007F11B8 /* gluten_free.jpg */; };
+		1C38D79118C6D406007F11B8 /* high_protein.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D78D18C6D406007F11B8 /* high_protein.jpg */; };
+		1C38D79218C6D406007F11B8 /* low_carb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D78E18C6D406007F11B8 /* low_carb.jpg */; };
+		1C38D79318C6D406007F11B8 /* vegan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D78F18C6D406007F11B8 /* vegan.jpg */; };
+		1C38D79818C6D8F6007F11B8 /* breads.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D79418C6D8F6007F11B8 /* breads.jpg */; };
+		1C38D79918C6D8F6007F11B8 /* cocktails.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D79518C6D8F6007F11B8 /* cocktails.jpg */; };
+		1C38D79A18C6D8F6007F11B8 /* condiments.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D79618C6D8F6007F11B8 /* condiments.jpg */; };
+		1C38D79B18C6D8F6007F11B8 /* salads.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D79718C6D8F6007F11B8 /* salads.jpg */; };
+		1C38D7A018C6D90E007F11B8 /* breads.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D79C18C6D90E007F11B8 /* breads.jpg */; };
+		1C38D7A118C6D90E007F11B8 /* cocktails.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D79D18C6D90E007F11B8 /* cocktails.jpg */; };
+		1C38D7A218C6D90E007F11B8 /* condiments.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D79E18C6D90E007F11B8 /* condiments.jpg */; };
+		1C38D7A318C6D90E007F11B8 /* salads.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D79F18C6D90E007F11B8 /* salads.jpg */; };
 		1C426B2E18B957D60058291B /* ShoppingCartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C426B2C18B957D60058291B /* ShoppingCartController.m */; };
 		1C426B2F18B957D60058291B /* ShoppingCartController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C426B2D18B957D60058291B /* ShoppingCartController.xib */; };
 		1C426B3318B95C8D0058291B /* TabbedViewFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C426B3218B95C8D0058291B /* TabbedViewFooter.xib */; };
@@ -206,6 +218,18 @@
 		1C38D78318C6D1E0007F11B8 /* italian.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = italian.jpg; sourceTree = "<group>"; };
 		1C38D78418C6D1E0007F11B8 /* mexican.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mexican.jpg; sourceTree = "<group>"; };
 		1C38D78518C6D1E0007F11B8 /* sideDish.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sideDish.jpg; sourceTree = "<group>"; };
+		1C38D78C18C6D406007F11B8 /* gluten_free.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gluten_free.jpg; sourceTree = "<group>"; };
+		1C38D78D18C6D406007F11B8 /* high_protein.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = high_protein.jpg; sourceTree = "<group>"; };
+		1C38D78E18C6D406007F11B8 /* low_carb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = low_carb.jpg; sourceTree = "<group>"; };
+		1C38D78F18C6D406007F11B8 /* vegan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vegan.jpg; sourceTree = "<group>"; };
+		1C38D79418C6D8F6007F11B8 /* breads.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = breads.jpg; sourceTree = "<group>"; };
+		1C38D79518C6D8F6007F11B8 /* cocktails.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cocktails.jpg; sourceTree = "<group>"; };
+		1C38D79618C6D8F6007F11B8 /* condiments.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = condiments.jpg; sourceTree = "<group>"; };
+		1C38D79718C6D8F6007F11B8 /* salads.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = salads.jpg; sourceTree = "<group>"; };
+		1C38D79C18C6D90E007F11B8 /* breads.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = breads.jpg; sourceTree = "<group>"; };
+		1C38D79D18C6D90E007F11B8 /* cocktails.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cocktails.jpg; sourceTree = "<group>"; };
+		1C38D79E18C6D90E007F11B8 /* condiments.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = condiments.jpg; sourceTree = "<group>"; };
+		1C38D79F18C6D90E007F11B8 /* salads.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = salads.jpg; sourceTree = "<group>"; };
 		1C426B2B18B957D60058291B /* ShoppingCartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartController.h; sourceTree = "<group>"; };
 		1C426B2C18B957D60058291B /* ShoppingCartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartController.m; sourceTree = "<group>"; };
 		1C426B2D18B957D60058291B /* ShoppingCartController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCartController.xib; sourceTree = "<group>"; };
@@ -754,6 +778,18 @@
 		1C973B2518B39B700097D051 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				1C38D79C18C6D90E007F11B8 /* breads.jpg */,
+				1C38D79D18C6D90E007F11B8 /* cocktails.jpg */,
+				1C38D79E18C6D90E007F11B8 /* condiments.jpg */,
+				1C38D79F18C6D90E007F11B8 /* salads.jpg */,
+				1C38D79418C6D8F6007F11B8 /* breads.jpg */,
+				1C38D79518C6D8F6007F11B8 /* cocktails.jpg */,
+				1C38D79618C6D8F6007F11B8 /* condiments.jpg */,
+				1C38D79718C6D8F6007F11B8 /* salads.jpg */,
+				1C38D78C18C6D406007F11B8 /* gluten_free.jpg */,
+				1C38D78D18C6D406007F11B8 /* high_protein.jpg */,
+				1C38D78E18C6D406007F11B8 /* low_carb.jpg */,
+				1C38D78F18C6D406007F11B8 /* vegan.jpg */,
 				1C38D78018C6D1E0007F11B8 /* american.jpg */,
 				1C38D78118C6D1E0007F11B8 /* chinese.jpg */,
 				1C38D78218C6D1E0007F11B8 /* french.jpg */,
@@ -888,8 +924,11 @@
 				1C973B0718B39AF90097D051 /* Images.xcassets in Resources */,
 				1C973AC918B39AF90097D051 /* 52.png in Resources */,
 				1C973B0618B39AF90097D051 /* image24.jpg in Resources */,
+				1C38D79B18C6D8F6007F11B8 /* salads.jpg in Resources */,
 				1C973AC718B39AF90097D051 /* 49.png in Resources */,
 				1C973AFC18B39AF90097D051 /* image14.jpg in Resources */,
+				1C38D7A318C6D90E007F11B8 /* salads.jpg in Resources */,
+				1C38D7A018C6D90E007F11B8 /* breads.jpg in Resources */,
 				1C973AF418B39AF90097D051 /* image6.jpg in Resources */,
 				1C973AF518B39AF90097D051 /* image7.jpg in Resources */,
 				1C38D78618C6D1E0007F11B8 /* american.jpg in Resources */,
@@ -919,12 +958,14 @@
 				1C38D78B18C6D1E0007F11B8 /* sideDish.jpg in Resources */,
 				1C973AAA18B39AF90097D051 /* 198.png in Resources */,
 				1C973B0E18B39AF90097D051 /* MainViewController.xib in Resources */,
+				1C38D79818C6D8F6007F11B8 /* breads.jpg in Resources */,
 				1C973AD218B39AF90097D051 /* chilli2.png in Resources */,
 				1C973AEB18B39AF90097D051 /* ContentViewController.xib in Resources */,
 				1C973AEF18B39AF90097D051 /* image1.jpg in Resources */,
 				1C973AC018B39AF90097D051 /* 39.png in Resources */,
 				1C973ABE18B39AF90097D051 /* 37.png in Resources */,
 				1C973B0318B39AF90097D051 /* image21.jpg in Resources */,
+				1C38D79318C6D406007F11B8 /* vegan.jpg in Resources */,
 				1C426B3318B95C8D0058291B /* TabbedViewFooter.xib in Resources */,
 				1C973AC818B39AF90097D051 /* 51.png in Resources */,
 				1C4A866E18B9A37700F896B9 /* MHTabBarInactiveTab.png in Resources */,
@@ -934,6 +975,7 @@
 				1C973AAC18B39AF90097D051 /* 2.png in Resources */,
 				1C973ABD18B39AF90097D051 /* 36.png in Resources */,
 				1C973AA618B39AF90097D051 /* 194.png in Resources */,
+				1C38D7A118C6D90E007F11B8 /* cocktails.jpg in Resources */,
 				1C4A866B18B9A37700F896B9 /* MHTabBarActiveTab.png in Resources */,
 				1C973AEE18B39AF90097D051 /* InfoPlist.strings in Resources */,
 				1C973ADC18B39AF90097D051 /* meat.png in Resources */,
@@ -945,6 +987,7 @@
 				1C973AC418B39AF90097D051 /* 44.png in Resources */,
 				1C973AC518B39AF90097D051 /* 45.png in Resources */,
 				1C973AE318B39AF90097D051 /* bookmark.png in Resources */,
+				1C38D79118C6D406007F11B8 /* high_protein.jpg in Resources */,
 				1C973A9C18B39AF90097D051 /* 181.png in Resources */,
 				1C973B0B18B39AF90097D051 /* LoginViewController.xib in Resources */,
 				1C973AB318B39AF90097D051 /* 25.png in Resources */,
@@ -954,6 +997,7 @@
 				1C973A9918B39AF90097D051 /* 13.png in Resources */,
 				1C973B0018B39AF90097D051 /* image18.jpg in Resources */,
 				1C973AA418B39AF90097D051 /* 192.png in Resources */,
+				1C38D7A218C6D90E007F11B8 /* condiments.jpg in Resources */,
 				1C973ADD18B39AF90097D051 /* meat1.png in Resources */,
 				1C973B1618B39AF90097D051 /* RecipeListViewController.xib in Resources */,
 				1C973AAB18B39AF90097D051 /* 199.png in Resources */,
@@ -962,6 +1006,7 @@
 				1C973B0418B39AF90097D051 /* image22.jpg in Resources */,
 				1C973AD818B39AF90097D051 /* egg3.png in Resources */,
 				1C973AAE18B39AF90097D051 /* 200.png in Resources */,
+				1C38D79918C6D8F6007F11B8 /* cocktails.jpg in Resources */,
 				1C973ADB18B39AF90097D051 /* garlic2.png in Resources */,
 				1C973AF718B39AF90097D051 /* image9.jpg in Resources */,
 				1C973AA518B39AF90097D051 /* 193.png in Resources */,
@@ -976,6 +1021,7 @@
 				1C38D78A18C6D1E0007F11B8 /* mexican.jpg in Resources */,
 				1C973AB218B39AF90097D051 /* 24.png in Resources */,
 				1C973ACE18B39AF90097D051 /* brocolli.png in Resources */,
+				1C38D79A18C6D8F6007F11B8 /* condiments.jpg in Resources */,
 				1C973AE218B39AF90097D051 /* Main.storyboard in Resources */,
 				1C973AD518B39AF90097D051 /* corn.png in Resources */,
 				1C973AE518B39AF90097D051 /* clock.png in Resources */,
@@ -983,6 +1029,7 @@
 				1C973B0118B39AF90097D051 /* image19.jpg in Resources */,
 				1C973AA918B39AF90097D051 /* 197.png in Resources */,
 				1C9739CD18B39AB20097D051 /* InfoPlist.strings in Resources */,
+				1C38D79018C6D406007F11B8 /* gluten_free.jpg in Resources */,
 				1C973A9B18B39AF90097D051 /* 180.png in Resources */,
 				1C38D78718C6D1E0007F11B8 /* chinese.jpg in Resources */,
 				1C973AFD18B39AF90097D051 /* image15.jpg in Resources */,
@@ -1007,6 +1054,7 @@
 				1C973ACC18B39AF90097D051 /* 55.png in Resources */,
 				1C38D78918C6D1E0007F11B8 /* italian.jpg in Resources */,
 				1C973ADF18B39AF90097D051 /* mushroom.png in Resources */,
+				1C38D79218C6D406007F11B8 /* low_carb.jpg in Resources */,
 				1C973ABF18B39AF90097D051 /* 38.png in Resources */,
 				1C973B1818B39AF90097D051 /* star.png in Resources */,
 				1C426B2F18B957D60058291B /* ShoppingCartController.xib in Resources */,

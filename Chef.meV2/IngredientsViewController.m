@@ -109,13 +109,14 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         float height = [self textSize:cellText constrainedToSize:CGSizeMake(280, 320)].height;
         
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake( 0.0f, 0.0f, 280.0f, height)];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake( 12.0f, 0.0f, 250.0f, 44)];
         titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         titleLabel.numberOfLines = 0;
         titleLabel.tag = 1;
         titleLabel.textAlignment = NSTextAlignmentLeft;
         titleLabel.font = [UIFont boldSystemFontOfSize:14.0f];
         titleLabel.backgroundColor = [UIColor clearColor];
+
 
         [cell.contentView addSubview:titleLabel];
     }
@@ -127,6 +128,14 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
     // Display the data in the table
     titleLabel.text = cellText;
 //    dataLabel.text = [self.rowDataArray objectAtIndex:indexPath.row];
+    
+    
+    if(indexPath.row % 2 == 0) {
+        cell.contentView.backgroundColor = [[UIColor alloc] initWithRed:255./255. green:(250./255.) blue:240./255. alpha:1];
+    } else {
+        cell.contentView.backgroundColor = [UIColor whiteColor];
+    }
+
     return cell;
 }
 
@@ -183,7 +192,7 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
         
         NSLog(@"Content height: %f", height);
         
-        return height + 15;
+        return height + 5;
    
     
 }

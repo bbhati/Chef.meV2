@@ -110,12 +110,17 @@ NSString* selectedRecipeNotification = @"SelectedRecipeNotification";
     Recipe* recipe = self.recipes[indexPath.row];
     objc_setAssociatedObject(cell, "recipe", recipe, OBJC_ASSOCIATION_RETAIN);
 
-    NSLog(@"images count %d", self.images.count);
-    NSLog(@"index count %d", indexPath.row);
     if(self.images.count > indexPath.row) {
         [cell.photo setImage:[Utilities imageByScalingAndCroppingForSize:(CGSize)CGSizeMake(90,90) source:self.images[indexPath.row]]];
     }
  
+    
+    if(indexPath.row % 2 == 0) {
+        cell.contentView.backgroundColor = [[UIColor alloc] initWithRed:255./255. green:(250./255.) blue:240./255. alpha:1];
+    } else {
+        cell.contentView.backgroundColor = [UIColor whiteColor];
+    }
+    
     NSInteger rating = recipe.rating;
 
     UIColor * color = [UIColor colorWithRed:252.0/255.0 green:194.0/255.0 blue:0 alpha:1.0];
