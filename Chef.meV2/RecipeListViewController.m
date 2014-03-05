@@ -230,7 +230,7 @@ NSString* selectedRecipeNotification = @"SelectedRecipeNotification";
     [[YummlyClient instance] fetchRecipesWithCategory:self.category sucess: ^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.
-            NSLog(@"Successfully retrieved %d scores.", objects.count);
+ //           NSLog(@"Successfully retrieved %d scores.", objects.count);
             // Do something with the found objects
             //self.recipes = [Recipe recipesWithArray:objects];
             self.recipes = [Recipe recipesParseWithArray:objects];

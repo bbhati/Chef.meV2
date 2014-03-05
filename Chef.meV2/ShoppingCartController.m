@@ -12,6 +12,7 @@
 #import "YummlyClient.h"
 #import "Parse/Parse.h"
 #import "Utilities.h"
+#import "PaymentViewController.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface ShoppingCartController ()
@@ -31,6 +32,22 @@
 @end
 //ShoppingCartRowCell
 @implementation ShoppingCartController
+
+static ShoppingCartController *sharedInstance = nil;
+
+// Get the shared instance and create it if necessary.
++ (ShoppingCartController *)sharedInstance {
+    if (nil != sharedInstance) {
+        return sharedInstance;
+    }
+    
+    static dispatch_once_t pred;        // Lock
+    dispatch_once(&pred, ^{             // This code is called at most once per app
+        sharedInstance = [[ShoppingCartController alloc] init];
+    });
+    
+    return sharedInstance;
+}
 
 - (id)init
 {
@@ -126,7 +143,7 @@
     Recipe* recipe= [[Recipe alloc] initWithDictionary: item.recipeDetail];
     cell.name.text = recipe.recipeName;
     
-    cell.qty.text = [NSString stringWithFormat:@"Quantity %d", item.quantity];
+    cell.qty.text = [NSString stringWithFormat:@"Quantity %ld", (long)item.quantity];
     //get image from saved recipeDetail
 
   //  cell.price.text = @"50$";
@@ -187,7 +204,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         //remove from parse
-        NSLog(@"Trying to delete row: %d", [indexPath row]);
+        NSLog(@"Trying to delete row: %ld", (long)[indexPath row]);
         
         ShoppingCartItem* toDelete = [self.cartItems objectAtIndex:[indexPath row]];
         NSLog(@"Trying to delete : %@", toDelete);
@@ -199,7 +216,7 @@
         NSArray* comp = [labeltext componentsSeparatedByString:@" "];
         
         NSInteger text = [comp[1] integerValue ] -1;
-        self.recipeCount.text = [NSString stringWithFormat:@"%@%d",@"Recipes: ", text];
+        self.recipeCount.text = [NSString stringWithFormat:@"%@%ld",@"Recipes: ", (long)text];
         
         labeltext = self.total.text;
         comp = [labeltext componentsSeparatedByString:@" "];
@@ -231,10 +248,10 @@
     [[YummlyClient instance] fetchShoppingCartWithBlock: ^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.
-            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
             // Do something with the found objects
            
-             self.recipeCount.text = [NSString stringWithFormat:@"%@%d",@"Recipes: ", objects.count];
+             self.recipeCount.text = [NSString stringWithFormat:@"%@%ld",@"Recipes: ", objects.count];
             
              for(int index =0 ; index < objects.count; index++) {
                 
@@ -290,6 +307,8 @@
 }
 
 - (void) openCheckout {
+    PaymentViewController *viewController = [[PaymentViewController alloc] initWithNibName:@"PaymentViewController" bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
     
 }
 
@@ -300,6 +319,19 @@
     float rndValue = (((float)arc4random()/0x100000000)*(high_bound-low_bound)+low_bound);
     return rndValue;
 }
+
+- (void) clearItems {
+    self.cartItems = [[NSMutableArray alloc] init];
+    
+    self.recipeCount.text =0;
+    
+    self.total.text = 0;
+    self.images = [[NSMutableDictionary alloc] init];
+    self.prices = [[NSMutableDictionary alloc] init];
+    [self.tableView reloadData];
+}
+
+
 //- (void)getPriceForShoppingCart{
 //    self.price = 0;
 //    for(int index =0 ; index < self.cartItems.count; index++) {

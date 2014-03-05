@@ -62,7 +62,7 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
     NSLog(@"Notification received: %@", notification);
     if(notification != nil){
         self.ingredients = [NSMutableArray arrayWithArray: self.recipe.ingredientLines];
-        self.servings.text = [NSString stringWithFormat:@"%d", self.recipe.numberOfServings ];
+        self.servings.text = [NSString stringWithFormat:@"%ld", (long)self.recipe.numberOfServings ];
         [self.table reloadData];
     }
     
@@ -108,7 +108,7 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
     if (cell == nil) {
         // Create the cell and add the labels
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        float height = [self textSize:cellText constrainedToSize:CGSizeMake(280, 320)].height;
+ //       float height = [self textSize:cellText constrainedToSize:CGSizeMake(280, 320)].height;
         
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake( 12.0f, 0.0f, 250.0f, 44)];
         titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -218,7 +218,13 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
     }
     else
     {
-        return [text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:size];
+        CGRect textRect = [text boundingRectWithSize:size
+                                             options:NSStringDrawingUsesLineFragmentOrigin
+                                          attributes:@{NSFontAttributeName:[UIFont fontWithName:@"Helvetica-Neue" size:14]}
+                                             context:nil];
+        
+        CGSize size = textRect.size;
+        return size;
     }
 }
 
@@ -228,8 +234,7 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
 }
 
 - (IBAction)onShowCart:(id)sender {
-    ShoppingCartController* cartController = [[ShoppingCartController alloc] init];
-
+    ShoppingCartController* cartController = [ShoppingCartController sharedInstance];
     [self.navigationController pushViewController:cartController animated:YES];
 }
 @end

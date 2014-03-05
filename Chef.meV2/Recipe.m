@@ -97,15 +97,15 @@
     NSString *formattedTime = nil;
     if(h > 0) {
         if(m > 0) {
-            formattedTime = [NSString stringWithFormat:@"%uh%02um", h, m];
+            formattedTime = [NSString stringWithFormat:@"%luh%02lum", (unsigned long)h, (unsigned long)m];
         } else {
-            formattedTime = [NSString stringWithFormat:@"%uh", h];
+            formattedTime = [NSString stringWithFormat:@"%luh", (unsigned long)h];
         }
         
     } else if(m > 0) {
-        formattedTime = [NSString stringWithFormat:@"%02um", m];
+        formattedTime = [NSString stringWithFormat:@"%02lum", (unsigned long)m];
     } else {
-        formattedTime = [NSString stringWithFormat:@"%02us", s];
+        formattedTime = [NSString stringWithFormat:@"%02lus", (unsigned long)s];
     }
     return formattedTime;
 }

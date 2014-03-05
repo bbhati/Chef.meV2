@@ -17,14 +17,24 @@ PODS:
   - AFNetworking/Serialization (2.0.3)
   - AFNetworking/UIKit (2.0.3):
     - AFNetworking/NSURLConnection
+  - PaymentKit (1.0.2)
   - Reachability (3.0.0)
+  - Stripe (1.0.2):
+    - PaymentKit (~> 1.0.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0.0)
   - Reachability (~> 3.0.0)
+  - Stripe (from `https://github.com/stripe/stripe-ios.git`)
+
+EXTERNAL SOURCES:
+  Stripe:
+    :git: https://github.com/stripe/stripe-ios.git
 
 SPEC CHECKSUMS:
   AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
+  PaymentKit: be75a5398a9465edd84f7249a9e57d707da025fb
   Reachability: 500bd76bf6cd8ff2c6fb715fc5f44ef6e4c024f2
+  Stripe: 61bc7835a96cae30764c8bff241ff557686db3c5
 
 COCOAPODS: 0.29.0

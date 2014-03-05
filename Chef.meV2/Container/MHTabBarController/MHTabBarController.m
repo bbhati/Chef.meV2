@@ -398,8 +398,7 @@ static const NSInteger TagOffset = 1000;
 }
 
 - (void)openShoppingCart {
-    ShoppingCartController* cartController = [[ShoppingCartController alloc] init];
-    
+    ShoppingCartController* cartController = [ShoppingCartController sharedInstance];
     [self.navigationController pushViewController:cartController animated:YES];
 }
 

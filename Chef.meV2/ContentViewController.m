@@ -88,11 +88,11 @@
 //	[self.category1 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"matrix_%02d", [self movieIndex]]]];
     NSUInteger totalCount = [self.categories count];
     NSUInteger currCount = self.pageIndex < 3 ? 8 : totalCount - (self.pageIndex-1)*8;
-    NSLog(@"Total:%d, pageindex:%d, Currcount %d", totalCount, self.pageIndex, currCount);
+//    NSLog(@"Total:%d, pageindex:%d, Currcount %d", totalCount, self.pageIndex, currCount);
     NSMutableArray* currCategories = [[NSMutableArray alloc] init];
     for (int i =0; i < currCount; i++) {
         imageName = [[NSMutableString alloc] initWithString:@"image"];
-        [imageName appendString:[NSString stringWithFormat:@"%d", (i+1)*self.pageIndex]];
+        [imageName appendString:[NSString stringWithFormat:@"%ld", (unsigned long)(i+1)*self.pageIndex]];
         [imageName appendString:@".jpg"];
         currCategories[i] = imageName;
         
@@ -102,7 +102,7 @@
 //            currCategories[i] = nil;
 //        }
 //    }
-    NSLog(@"Size of currCategories %d", [currCategories count]);
+//    NSLog(@"Size of currCategories %d", [currCategories count]);
     NSLog(@"imagename %@", [self.imageNames objectForKey:self.categories[8*(self.pageIndex -1)]] );
     NSLog(@"Categories: %@", currCategories);
     [currCategories count] > 0 ? [self setImage:[self.imageNames objectForKey:self.categories[8*(self.pageIndex -1)]] label:self.categories[8*(self.pageIndex-1)] category:[self category1] catLabel:[self label1]]:nil;

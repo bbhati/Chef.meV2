@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ShoppingCartController : UIViewController<UITableViewDataSource, UITableViewDelegate>
-
+@interface ShoppingCartController : UIViewController<UITableViewDataSource, UITableViewDelegate> {
+    
+}
++ (id)sharedInstance;
+- (void) clearItems;
 @end

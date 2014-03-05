@@ -14,11 +14,11 @@
 + (YummlyClient*) instance;
 + (NSArray *) categories;
 
-- (void)fetchDessertsWithSuccess:(void(^)(AFHTTPRequestOperation *operation, id responseObject))success failure: (void(^)(AFHTTPRequestOperation *operation, NSError *error)) failure;
+//- (void)fetchDessertsWithSuccess:(void(^)(AFHTTPRequestOperation *operation, id responseObject))success failure: (void(^)(AFHTTPRequestOperation *operation, NSError *error)) failure;
 
-- (void)fetchMainDishesWithSuccess: (NSString*)query success:(void(^)(AFHTTPRequestOperation *operation, id responseObject))success failure: (void(^)(AFHTTPRequestOperation *operation, NSError *error)) failure;
+//- (void)fetchMainDishesWithSuccess: (NSString*)query success:(void(^)(AFHTTPRequestOperation *operation, id responseObject))success failure: (void(^)(AFHTTPRequestOperation *operation, NSError *error)) failure;
 
-- (void)fetchAppetizersWithSuccess: (NSString*)query success:(void(^)(AFHTTPRequestOperation *operation, id responseObject))success failure: (void(^)(AFHTTPRequestOperation *operation, NSError *error)) failure;
+//- (void)fetchAppetizersWithSuccess: (NSString*)query success:(void(^)(AFHTTPRequestOperation *operation, id responseObject))success failure: (void(^)(AFHTTPRequestOperation *operation, NSError *error)) failure;
 
 - (void)fetchRecipesWithQuery: (NSString*)query success:(void(^)(AFHTTPRequestOperation *operation, id responseObject))success failure: (void(^)(AFHTTPRequestOperation *operation, NSError *error)) failure;
 

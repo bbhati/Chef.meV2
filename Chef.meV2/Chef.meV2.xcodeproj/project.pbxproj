@@ -198,6 +198,9 @@
 		1C973B3E18B3A5AC0097D051 /* Chef.meV2-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C973B3D18B3A5AC0097D051 /* Chef.meV2-Info.plist */; };
 		242AEEBF18C5700300F0B6C6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242AEEBE18C5700300F0B6C6 /* Parse.framework */; };
 		242AEEC118C5709400F0B6C6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242AEEC018C5709400F0B6C6 /* FacebookSDK.framework */; };
+		24AEA7F418C7674000807FAC /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AEA7F218C7674000807FAC /* PaymentViewController.m */; };
+		24AEA7F518C7674000807FAC /* PaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24AEA7F318C7674000807FAC /* PaymentViewController.xib */; };
+		24AEA7F818C767D400807FAC /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AEA7F718C767D400807FAC /* MBProgressHUD.m */; };
 		CE4C43F064FC464781A54F3A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 911724CEE35648C484FD344E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -434,6 +437,11 @@
 		1C973B3D18B3A5AC0097D051 /* Chef.meV2-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Chef.meV2-Info.plist"; sourceTree = "<group>"; };
 		242AEEBE18C5700300F0B6C6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../../../Downloads/Parse.framework; sourceTree = "<group>"; };
 		242AEEC018C5709400F0B6C6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		24AEA7F118C7674000807FAC /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
+		24AEA7F218C7674000807FAC /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
+		24AEA7F318C7674000807FAC /* PaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentViewController.xib; sourceTree = "<group>"; };
+		24AEA7F618C767D400807FAC /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		24AEA7F718C767D400807FAC /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		911724CEE35648C484FD344E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5548F19299B4D979EBEFC75 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -724,6 +732,9 @@
 		1C973B2318B39B280097D051 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				24AEA7F118C7674000807FAC /* PaymentViewController.h */,
+				24AEA7F218C7674000807FAC /* PaymentViewController.m */,
+				24AEA7F318C7674000807FAC /* PaymentViewController.xib */,
 				1C426B2B18B957D60058291B /* ShoppingCartController.h */,
 				1C426B2C18B957D60058291B /* ShoppingCartController.m */,
 				1C426B2D18B957D60058291B /* ShoppingCartController.xib */,
@@ -765,6 +776,8 @@
 		1C973B2418B39B350097D051 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				24AEA7F618C767D400807FAC /* MBProgressHUD.h */,
+				24AEA7F718C767D400807FAC /* MBProgressHUD.m */,
 				1C973A8F18B39AF90097D051 /* TagFinder.h */,
 				1C973A9018B39AF90097D051 /* TagFinder.m */,
 				1C973A9418B39AF90097D051 /* Utilities.h */,
@@ -944,6 +957,7 @@
 				1C4A866F18B9A37700F896B9 /* MHTabBarInactiveTab@2x.png in Resources */,
 				1C973AB718B39AF90097D051 /* 3.png in Resources */,
 				1C973AB518B39AF90097D051 /* 28.png in Resources */,
+				24AEA7F518C7674000807FAC /* PaymentViewController.xib in Resources */,
 				1C4A866C18B9A37700F896B9 /* MHTabBarActiveTab@2x.png in Resources */,
 				1C973AE018B39AF90097D051 /* time.png in Resources */,
 				1C973ADA18B39AF90097D051 /* garlic.png in Resources */,
@@ -1123,6 +1137,7 @@
 				1C973B1218B39AF90097D051 /* Recipe.m in Sources */,
 				1C973B0818B39AF90097D051 /* IngredientsViewController.m in Sources */,
 				1C973AEA18B39AF90097D051 /* ContentViewController.m in Sources */,
+				24AEA7F818C767D400807FAC /* MBProgressHUD.m in Sources */,
 				1C973B1D18B39AF90097D051 /* UserAccountViewController.m in Sources */,
 				1C973AE918B39AF90097D051 /* MPTransition.m in Sources */,
 				1C426B4118B9842D0058291B /* ShoppingCart.m in Sources */,
@@ -1134,6 +1149,7 @@
 				1C973B0D18B39AF90097D051 /* MainViewController.m in Sources */,
 				1C973AE118B39AF90097D051 /* AppDelegate.m in Sources */,
 				1C973B1018B39AF90097D051 /* PropertyConfigViewController.m in Sources */,
+				24AEA7F418C7674000807FAC /* PaymentViewController.m in Sources */,
 				1C973B1918B39AF90097D051 /* StepsViewController.m in Sources */,
 				1C973AE618B39AF90097D051 /* MPAnimation.m in Sources */,
 				1C426B4418B984830058291B /* ShoppingCartItem.m in Sources */,
