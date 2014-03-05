@@ -45,6 +45,7 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [[UIColor alloc] initWithRed:255./255. green:(250./255.) blue:240./255. alpha:1];
     NSLog(@"Recipe: %@", self.recipe);
     if(self.recipe != nil) {
         self.table.delegate = self;

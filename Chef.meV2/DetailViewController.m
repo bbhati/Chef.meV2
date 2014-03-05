@@ -29,7 +29,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [[UIColor alloc] initWithRed:255./255. green:(250./255.) blue:240./255. alpha:1];
+    
     NSLog(@"Recipe: %@", self.recipe);
+    [self.recipeImage.layer setCornerRadius:10.0f];
     if(self.recipe != nil) {
         [self getRecipeWithId:self.recipe.id];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(popuLateView:) name:selectedRecipeNotification object:nil];

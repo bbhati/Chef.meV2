@@ -43,8 +43,7 @@ NSString* stepsLoadedRecipeNotification = @"StepsLoadedRecipeNotification";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-//    NSString *fullURL = @"http://conecode.com";
+    self.view.backgroundColor = [[UIColor alloc] initWithRed:255./255. green:(250./255.) blue:240./255. alpha:1];
 
     [self getRecipeWithId:self.recipe.id];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(popuLateView:) name:stepsLoadedRecipeNotification object:nil];

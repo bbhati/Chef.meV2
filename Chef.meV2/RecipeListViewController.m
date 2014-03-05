@@ -20,7 +20,7 @@
 
 @interface RecipeListViewController ()
 @property (nonatomic, strong) NSMutableArray* recipes;
-@property (nonatomic, strong) NSMutableArray* images;
+@property (nonatomic, strong) NSMutableDictionary* imagesDictionary;
 @property (nonatomic) BOOL downloadedImages;
 @property (nonatomic, strong) RestObject* currRecipe;
 
@@ -43,7 +43,7 @@ NSString* selectedRecipeNotification = @"SelectedRecipeNotification";
     self = [super init];
     if (self) {
         self.recipes = [[NSMutableArray alloc] init];
-        self.images = [[NSMutableArray alloc] init];
+        self.imagesDictionary = [[NSMutableDictionary alloc] init];
         [self.tableView registerNib:[UINib nibWithNibName:@"RecipeListCell" bundle:nil] forCellReuseIdentifier:@"RecipeListCell"];
         [[self navigationController] setNavigationBarHidden:NO animated:YES];
     }
@@ -55,7 +55,7 @@ NSString* selectedRecipeNotification = @"SelectedRecipeNotification";
     if (self) {
         self.category = category;
         self.recipes = [[NSMutableArray alloc] init];
-        self.images = [[NSMutableArray alloc] init];
+        self.imagesDictionary = [[NSMutableDictionary alloc] init];
         [self.tableView registerNib:[UINib nibWithNibName:@"RecipeListCell" bundle:nil] forCellReuseIdentifier:@"RecipeListCell"];
         [[self navigationController] setNavigationBarHidden:NO animated:YES];
     }
@@ -110,9 +110,9 @@ NSString* selectedRecipeNotification = @"SelectedRecipeNotification";
     Recipe* recipe = self.recipes[indexPath.row];
     objc_setAssociatedObject(cell, "recipe", recipe, OBJC_ASSOCIATION_RETAIN);
 
-    if(self.images.count > indexPath.row) {
-        [cell.photo setImage:[Utilities imageByScalingAndCroppingForSize:(CGSize)CGSizeMake(90,90) source:self.images[indexPath.row]]];
-    }
+    [cell.photo setImage:[Utilities imageByScalingAndCroppingForSize:(CGSize)CGSizeMake(90,90) source:[self.imagesDictionary objectForKey:recipe.id]]];
+        
+
  
     
     if(indexPath.row % 2 == 0) {
@@ -187,44 +187,6 @@ NSString* selectedRecipeNotification = @"SelectedRecipeNotification";
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 150;
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 
 #pragma mark - Table view delegate
@@ -246,10 +208,6 @@ NSString* selectedRecipeNotification = @"SelectedRecipeNotification";
     IngredientsViewController* ingVC = [[IngredientsViewController alloc] init];
     ingVC.recipe = recipe;
     ingVC.tabBarItem.title = @"Ingredients";
-    
-    //ingVC.tabBarItem.image = [UIImage imageNamed:@"star.png"];
-
-    
     
     StepsViewController* stepsVC =[[StepsViewController alloc] init];
     stepsVC.recipe = recipe;
@@ -288,9 +246,9 @@ NSString* selectedRecipeNotification = @"SelectedRecipeNotification";
                 
                 [dummy.imageView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
                     ////resize
-                    
-                    [self.images addObject:image];
-                    if(index == self.recipes.count -1) {
+                
+                    [self.imagesDictionary setObject:image forKey:recipe.id];
+                    if([self.imagesDictionary count] == self.recipes.count) {
                         self.downloadedImages = YES;
                         [self.tableView reloadData];
                     }

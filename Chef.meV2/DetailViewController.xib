@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
@@ -19,24 +19,24 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mSK-wV-jcF">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="363"/>
+                    <rect key="frame" x="0.0" y="21" width="320" height="363"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQH-Ie-F9G">
-                    <rect key="frame" x="0.0" y="362" width="320" height="211"/>
+                    <rect key="frame" x="0.0" y="440" width="320" height="133"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Cocoa Brownies" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="OEf-gN-Ej6">
-                            <rect key="frame" x="0.0" y="50" width="320" height="21"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Best Cocoa Brownies" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="OEf-gN-Ej6">
+                            <rect key="frame" x="0.0" y="27" width="320" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="OEf-gN-Ej6" firstAttribute="top" secondItem="rQH-Ie-F9G" secondAttribute="top" constant="50" id="3VN-dV-nEN"/>
+                        <constraint firstItem="OEf-gN-Ej6" firstAttribute="top" secondItem="rQH-Ie-F9G" secondAttribute="top" constant="27" id="3VN-dV-nEN"/>
                         <constraint firstItem="OEf-gN-Ej6" firstAttribute="leading" secondItem="rQH-Ie-F9G" secondAttribute="leading" id="AYE-mr-gbI"/>
                         <constraint firstAttribute="trailing" secondItem="OEf-gN-Ej6" secondAttribute="trailing" id="ynE-8N-32h"/>
                     </constraints>
@@ -44,11 +44,11 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="rQH-Ie-F9G" firstAttribute="top" secondItem="mSK-wV-jcF" secondAttribute="bottom" constant="-1" id="CRg-iq-SNd"/>
-                <constraint firstItem="mSK-wV-jcF" firstAttribute="top" secondItem="QX7-yM-6Gd" secondAttribute="top" id="Hxf-Yx-SHk"/>
+                <constraint firstItem="rQH-Ie-F9G" firstAttribute="top" secondItem="mSK-wV-jcF" secondAttribute="bottom" constant="56" id="CRg-iq-SNd"/>
+                <constraint firstItem="mSK-wV-jcF" firstAttribute="top" secondItem="QX7-yM-6Gd" secondAttribute="top" constant="21" id="Hxf-Yx-SHk"/>
                 <constraint firstItem="mSK-wV-jcF" firstAttribute="leading" secondItem="QX7-yM-6Gd" secondAttribute="leading" id="M9u-m4-yxW"/>
                 <constraint firstAttribute="trailing" secondItem="mSK-wV-jcF" secondAttribute="trailing" id="MWZ-dv-b7z"/>
-                <constraint firstAttribute="bottom" secondItem="mSK-wV-jcF" secondAttribute="bottom" constant="205" id="Y0v-Rl-qBV"/>
+                <constraint firstAttribute="bottom" secondItem="mSK-wV-jcF" secondAttribute="bottom" constant="184" id="Y0v-Rl-qBV"/>
                 <constraint firstAttribute="bottom" secondItem="rQH-Ie-F9G" secondAttribute="bottom" constant="-5" id="asK-Yw-I7S"/>
                 <constraint firstAttribute="trailing" secondItem="rQH-Ie-F9G" secondAttribute="trailing" id="imL-eI-hXg"/>
                 <constraint firstItem="rQH-Ie-F9G" firstAttribute="leading" secondItem="QX7-yM-6Gd" secondAttribute="leading" id="ohI-RD-fwd"/>

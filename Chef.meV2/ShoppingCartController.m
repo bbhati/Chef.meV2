@@ -17,8 +17,14 @@
 @interface ShoppingCartController ()
 @property(nonatomic, strong) NSMutableArray* recipes;
 @property(nonatomic, strong) NSMutableArray* cartItems;
-@property (nonatomic, strong) NSMutableArray* images;
+@property (nonatomic, strong) NSMutableDictionary* images;
+@property (nonatomic, strong) NSMutableDictionary* prices;
 @property (nonatomic) int price;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *recipeCount;
+@property (weak, nonatomic) IBOutlet UILabel *total;
+@property (weak, nonatomic) IBOutlet UIView *innerView;
+
 //@property (weak, nonatomic) IBOutlet UITableView *table;
 
 
@@ -32,13 +38,12 @@
     if (self) {
         //read recipes from parse
         self.cartItems = [[NSMutableArray alloc] init];
-//        self.recipes = [[NSUserDefaults standardUserDefaults] objectForKey:@"shoppingCart"];
-        self.images = [[NSMutableArray alloc] init];
-       // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-        [self.tableView registerNib:[UINib nibWithNibName:@"ShoppingCartRowCell" bundle:nil] forCellReuseIdentifier:@"ShoppingCartRowCell"];
-        if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
-            [self.tableView setSeparatorInset:UIEdgeInsetsZero];
-        }
+
+        self.recipeCount.text =0;
+
+        self.total.text = 0;
+        self.images = [[NSMutableDictionary alloc] init];
+        self.prices = [[NSMutableDictionary alloc] init];
    }
     return self;
 }
@@ -49,7 +54,33 @@
 {
     [super viewDidLoad];
 
-    //get from parse
+    UIView* v = self.innerView;
+    // border radius
+    [v.layer setCornerRadius:10.0f];
+    
+    // border
+    [v.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+    [v.layer setBorderWidth:1.0f];
+    
+    // drop shadow
+    [v.layer setShadowColor:[UIColor blackColor].CGColor];
+    [v.layer setShadowOpacity:0.8];
+    [v.layer setShadowRadius:3.0];
+    [v.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
+    [self.tableView.layer setCornerRadius:10.0f];
+    self.tableView.dataSource =self;
+    self.tableView.delegate =self;
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"ShoppingCartRowCell" bundle:nil] forCellReuseIdentifier:@"ShoppingCartRowCell"];
+    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.tableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+
+    UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithTitle:@"Checkout" style:UIBarButtonItemStyleDone target:self action:@selector(openCheckout)];
+    
+    NSArray *items = [NSArray arrayWithObjects:item1,item2, nil];
+    self.toolbarItems = items;
     
     [self reload];
 }
@@ -90,7 +121,7 @@
     
     if(self.images.count > indexPath.row) {
         //[cell.photo setImage:[UIImage imageNamed:@"image1.jpg"]];
-        [cell.photo setImage:[Utilities imageByScalingAndCroppingForSize:(CGSize)CGSizeMake(90,90) source:self.images[indexPath.row]]];
+        [cell.photo setImage:[Utilities imageByScalingAndCroppingForSize:(CGSize)CGSizeMake(90,90) source:[self.images objectForKey:item.recipeId]]];
     }
     Recipe* recipe= [[Recipe alloc] initWithDictionary: item.recipeDetail];
     cell.name.text = recipe.recipeName;
@@ -164,6 +195,20 @@
         [self.cartItems removeObjectAtIndex:[indexPath row]];
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        NSString* labeltext = self.recipeCount.text;
+        NSArray* comp = [labeltext componentsSeparatedByString:@" "];
+        
+        NSInteger text = [comp[1] integerValue ] -1;
+        self.recipeCount.text = [NSString stringWithFormat:@"%@%d",@"Recipes: ", text];
+        
+        labeltext = self.total.text;
+        comp = [labeltext componentsSeparatedByString:@" "];
+        
+        float total = [comp[1] floatValue];
+        NSLog(@"floatVal: %f", total);
+        total = total - [[self.prices objectForKey:toDelete.recipeId] floatValue];
+        
+        self.total.text = [NSString stringWithFormat:@"%@%0.2f%@", @"Total: ", total, @" $"];
     }
 }
 
@@ -189,8 +234,10 @@
             NSLog(@"Successfully retrieved %d scores.", objects.count);
             // Do something with the found objects
            
+             self.recipeCount.text = [NSString stringWithFormat:@"%@%d",@"Recipes: ", objects.count];
             
              for(int index =0 ; index < objects.count; index++) {
+                
                 PFObject * object = objects[index];
                 Recipe* recipe= [[Recipe alloc] initWithDictionary: object[@"recipeDetail"]];
                 NSLog(@"%@", object.objectId);
@@ -205,6 +252,7 @@
                 ShoppingCartItem* item = [[ShoppingCartItem alloc] initWithDictionary:itemAsDictionary];
                 [self.cartItems addObject:item];
 
+                 [self.prices setObject:[NSString stringWithFormat:@"%0.2f", [self getPriceForItem]] forKey:item.recipeId];
                 UITableViewCell* dummy = [[UITableViewCell alloc] init];
                 NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: [recipe image90]]
                                                                        cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
@@ -214,8 +262,9 @@
                 [dummy.imageView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
                     ////resize
                     
-                    [self.images addObject:image];
-                    if(index == objects.count -1) {
+                    [self.images setObject:image forKey:item.recipeId];
+                    if([self.images count] == objects.count) {
+
                         [self.tableView reloadData];
                     }
                 } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
@@ -225,7 +274,12 @@
                     }
                 }];
             }
-            //reload table
+            float total =0;
+            for(int index =0; index < objects.count; index++) {
+                ShoppingCartItem* item = self.cartItems[index];
+                total = total + [[self.prices objectForKey:item.recipeId] floatValue];
+            }
+            self.total.text = [NSString stringWithFormat:@"%@%0.2f%@", @"Total: ", total, @" $"];
 
         } else {
             // Log details of the failure
@@ -235,6 +289,17 @@
 
 }
 
+- (void) openCheckout {
+    
+}
+
+-(float) getPriceForItem {
+
+    float low_bound = 5.50;
+    float high_bound = 15.09;
+    float rndValue = (((float)arc4random()/0x100000000)*(high_bound-low_bound)+low_bound);
+    return rndValue;
+}
 //- (void)getPriceForShoppingCart{
 //    self.price = 0;
 //    for(int index =0 ; index < self.cartItems.count; index++) {

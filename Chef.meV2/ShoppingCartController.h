@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ShoppingCartController : UITableViewController
+@interface ShoppingCartController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @end
