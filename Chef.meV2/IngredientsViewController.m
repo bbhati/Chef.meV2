@@ -107,7 +107,7 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
     if (cell == nil) {
         // Create the cell and add the labels
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        float height = [self textSize:cellText constrainedToSize:CGSizeMake(280, FLT_MAX)].height;
+        float height = [self textSize:cellText constrainedToSize:CGSizeMake(280, 320)].height;
         
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake( 0.0f, 0.0f, 280.0f, height)];
         titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -174,7 +174,7 @@ NSString* loadedRecipeNotification = @"LoadedRecipeNotification";
         float widthOfTextView = self.table.bounds.size.width;
         widthOfTextView = widthOfTextView - horizontalPadding;
         
-        float height = [self textSize:content constrainedToSize:CGSizeMake(widthOfTextView, FLT_MAX)].height;
+        float height = [self textSize:content constrainedToSize:CGSizeMake(widthOfTextView, 320)].height;
         
         
         if(height < 44){

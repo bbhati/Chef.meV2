@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C38D78618C6D1E0007F11B8 /* american.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D78018C6D1E0007F11B8 /* american.jpg */; };
+		1C38D78718C6D1E0007F11B8 /* chinese.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D78118C6D1E0007F11B8 /* chinese.jpg */; };
+		1C38D78818C6D1E0007F11B8 /* french.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D78218C6D1E0007F11B8 /* french.jpg */; };
+		1C38D78918C6D1E0007F11B8 /* italian.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D78318C6D1E0007F11B8 /* italian.jpg */; };
+		1C38D78A18C6D1E0007F11B8 /* mexican.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D78418C6D1E0007F11B8 /* mexican.jpg */; };
+		1C38D78B18C6D1E0007F11B8 /* sideDish.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C38D78518C6D1E0007F11B8 /* sideDish.jpg */; };
 		1C426B2E18B957D60058291B /* ShoppingCartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C426B2C18B957D60058291B /* ShoppingCartController.m */; };
 		1C426B2F18B957D60058291B /* ShoppingCartController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C426B2D18B957D60058291B /* ShoppingCartController.xib */; };
 		1C426B3318B95C8D0058291B /* TabbedViewFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C426B3218B95C8D0058291B /* TabbedViewFooter.xib */; };
@@ -194,6 +200,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C38D78018C6D1E0007F11B8 /* american.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = american.jpg; sourceTree = "<group>"; };
+		1C38D78118C6D1E0007F11B8 /* chinese.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chinese.jpg; sourceTree = "<group>"; };
+		1C38D78218C6D1E0007F11B8 /* french.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = french.jpg; sourceTree = "<group>"; };
+		1C38D78318C6D1E0007F11B8 /* italian.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = italian.jpg; sourceTree = "<group>"; };
+		1C38D78418C6D1E0007F11B8 /* mexican.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mexican.jpg; sourceTree = "<group>"; };
+		1C38D78518C6D1E0007F11B8 /* sideDish.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sideDish.jpg; sourceTree = "<group>"; };
 		1C426B2B18B957D60058291B /* ShoppingCartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartController.h; sourceTree = "<group>"; };
 		1C426B2C18B957D60058291B /* ShoppingCartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartController.m; sourceTree = "<group>"; };
 		1C426B2D18B957D60058291B /* ShoppingCartController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCartController.xib; sourceTree = "<group>"; };
@@ -742,6 +754,12 @@
 		1C973B2518B39B700097D051 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				1C38D78018C6D1E0007F11B8 /* american.jpg */,
+				1C38D78118C6D1E0007F11B8 /* chinese.jpg */,
+				1C38D78218C6D1E0007F11B8 /* french.jpg */,
+				1C38D78318C6D1E0007F11B8 /* italian.jpg */,
+				1C38D78418C6D1E0007F11B8 /* mexican.jpg */,
+				1C38D78518C6D1E0007F11B8 /* sideDish.jpg */,
 				1C9739F118B39AF80097D051 /* 32 px */,
 				1C973A4018B39AF80097D051 /* bookmark.png */,
 				1C973A4318B39AF80097D051 /* clock.png */,
@@ -874,6 +892,7 @@
 				1C973AFC18B39AF90097D051 /* image14.jpg in Resources */,
 				1C973AF418B39AF90097D051 /* image6.jpg in Resources */,
 				1C973AF518B39AF90097D051 /* image7.jpg in Resources */,
+				1C38D78618C6D1E0007F11B8 /* american.jpg in Resources */,
 				1C973ADE18B39AF90097D051 /* meat2.png in Resources */,
 				1C973AC118B39AF90097D051 /* 4.png in Resources */,
 				1C973AC618B39AF90097D051 /* 46.png in Resources */,
@@ -897,6 +916,7 @@
 				1C973AD618B39AF90097D051 /* egg.png in Resources */,
 				1C973ACA18B39AF90097D051 /* 53.png in Resources */,
 				1C973B0518B39AF90097D051 /* image23.jpg in Resources */,
+				1C38D78B18C6D1E0007F11B8 /* sideDish.jpg in Resources */,
 				1C973AAA18B39AF90097D051 /* 198.png in Resources */,
 				1C973B0E18B39AF90097D051 /* MainViewController.xib in Resources */,
 				1C973AD218B39AF90097D051 /* chilli2.png in Resources */,
@@ -953,6 +973,7 @@
 				1C973AB818B39AF90097D051 /* 30.png in Resources */,
 				1C973AB918B39AF90097D051 /* 31.png in Resources */,
 				1C973AFE18B39AF90097D051 /* image16.jpg in Resources */,
+				1C38D78A18C6D1E0007F11B8 /* mexican.jpg in Resources */,
 				1C973AB218B39AF90097D051 /* 24.png in Resources */,
 				1C973ACE18B39AF90097D051 /* brocolli.png in Resources */,
 				1C973AE218B39AF90097D051 /* Main.storyboard in Resources */,
@@ -963,6 +984,7 @@
 				1C973AA918B39AF90097D051 /* 197.png in Resources */,
 				1C9739CD18B39AB20097D051 /* InfoPlist.strings in Resources */,
 				1C973A9B18B39AF90097D051 /* 180.png in Resources */,
+				1C38D78718C6D1E0007F11B8 /* chinese.jpg in Resources */,
 				1C973AFD18B39AF90097D051 /* image15.jpg in Resources */,
 				1C973B1B18B39AF90097D051 /* TabbedController.xib in Resources */,
 				1C973AD418B39AF90097D051 /* coffee.png in Resources */,
@@ -976,12 +998,14 @@
 				1C973ABA18B39AF90097D051 /* 32.png in Resources */,
 				1C973AF318B39AF90097D051 /* image5.jpg in Resources */,
 				1C973AF118B39AF90097D051 /* image3.jpg in Resources */,
+				1C38D78818C6D1E0007F11B8 /* french.jpg in Resources */,
 				1C973AB118B39AF90097D051 /* 23.png in Resources */,
 				1C4A867118B9A37700F896B9 /* MHTabBarIndicator@2x.png in Resources */,
 				1C4A867018B9A37700F896B9 /* MHTabBarIndicator.png in Resources */,
 				1C973ACD18B39AF90097D051 /* bread.png in Resources */,
 				1C973AFA18B39AF90097D051 /* image12.jpg in Resources */,
 				1C973ACC18B39AF90097D051 /* 55.png in Resources */,
+				1C38D78918C6D1E0007F11B8 /* italian.jpg in Resources */,
 				1C973ADF18B39AF90097D051 /* mushroom.png in Resources */,
 				1C973ABF18B39AF90097D051 /* 38.png in Resources */,
 				1C973B1818B39AF90097D051 /* star.png in Resources */,

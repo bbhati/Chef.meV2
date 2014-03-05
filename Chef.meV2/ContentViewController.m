@@ -14,6 +14,7 @@
 
 @property (assign, nonatomic, getter = isRotating) BOOL rotating;
 @property(nonatomic) NSArray* categories;
+@property(nonatomic) NSMutableDictionary* imageNames;
 -(void)addScrollingGradientToView:(UIImageView*)imageView;
 @end
 
@@ -53,6 +54,37 @@
     
     self.categories = [YummlyClient categories];
 
+    @"Main Dishes", @"Dessert", @"Side Dishes", @"Lunch and Snacks", @"Appetizers", @"Salads", @"Breads", @"Breakfast and Brunch", @"Soups", @"Beverages", @"Condiments and Sauces", @"Cocktails", @"American" ,@"French", @"Italian", @"Chinese", @"Mexican", @"Cakes", @"High Protein", @"Vegan", @"Low Carb", @"Gluten Free",
+    
+    self.imageNames = [[NSMutableDictionary alloc] init];
+    
+    [self.imageNames setObject:@"image1" forKey:@"Main Dishes"];
+    [self.imageNames setObject:@"image22" forKey:@"Dessert"];
+    [self.imageNames setObject:@"sideDish" forKey:@"Side Dishes"];
+    [self.imageNames setObject:@"image11" forKey:@"Lunch and Snacks"];
+    [self.imageNames setObject:@"image9" forKey:@"Appetizers"];
+    [self.imageNames setObject:@"" forKey:@"Salads"];
+    [self.imageNames setObject:@"" forKey:@"Breads"];
+    [self.imageNames setObject:@"" forKey:@"Breakfast and Brunch"];
+    [self.imageNames setObject:@"image8" forKey:@"Soups"];
+    [self.imageNames setObject:@"image7" forKey:@"Beverages"];
+    [self.imageNames setObject:@"" forKey:@"Condiments and Sauces"];
+    [self.imageNames setObject:@"" forKey:@"Cocktails"];
+    [self.imageNames setObject:@"american" forKey:@"American"];
+    [self.imageNames setObject:@"french" forKey:@"French"];
+    [self.imageNames setObject:@"italian" forKey:@"Italian"];
+    [self.imageNames setObject:@"chinese" forKey:@"Chinese"];
+    [self.imageNames setObject:@"mexican" forKey:@"Mexican"];
+    [self.imageNames setObject:@"image2" forKey:@"Cakes"];
+    [self.imageNames setObject:@"" forKey:@"High Protein"];
+    [self.imageNames setObject:@"" forKey:@"Vegan"];
+    [self.imageNames setObject:@"" forKey:@"Low Carb"];
+    [self.imageNames setObject:@"" forKey:@"Gluten Free"];
+    
+    
+    
+    
+    
     NSMutableString* imageName = nil;
     
 //	[self.category1 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"matrix_%02d", [self movieIndex]]]];
@@ -224,7 +256,8 @@
     [category setImage:[UIImage imageNamed:image]];
     [self addScrollingGradientToView:category];
     [catLabel setText:label];
-    [catLabel setTextColor:[UIColor blackColor]];
+    [catLabel setFont:[UIFont fontWithName:@"Helvetica-Neue"size:14]];
+//    [catLabel setTextColor:[UIColor whiteColor]];
 
 }
 
@@ -237,7 +270,7 @@
     nextImageFade.frame = imageView.bounds;
     
     nextImageFade.colors =  //@[[UIColor whiteColor], [UIColor blackColor]];
-                            [NSArray arrayWithObjects:(id)[[UIColor whiteColor] CGColor], (id)[[UIColor whiteColor] CGColor], (id)[[UIColor clearColor] CGColor], nil];
+                            [NSArray arrayWithObjects:(id)[[UIColor clearColor] CGColor], (id)[[UIColor clearColor] CGColor], (id)[[UIColor blackColor] CGColor], nil];
 //                            [NSArray arrayWithObjects:(id)
 //                            [UIColor colorWithRed:0. green:0. blue:0. alpha:0.0].CGColor,
 //                            [UIColor colorWithRed:0. green:0. blue:0. alpha:1.0].CGColor,
@@ -251,7 +284,9 @@
     nextImageFade.endPoint = CGPointMake(.5, 1);
     
     //Put in the fading last so that it is above everything else
-    [imageView.layer setMask:nextImageFade];
+    
+    [imageView.layer insertSublayer:nextImageFade atIndex:0];
+//    [imageView.layer setMask:nextImageFade];
 }
 
 
