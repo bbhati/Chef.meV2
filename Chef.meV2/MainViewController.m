@@ -42,12 +42,14 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController setToolbarHidden:YES];
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController setToolbarHidden:YES];
     
     self.previousIndex = PAGE_MIN;
     

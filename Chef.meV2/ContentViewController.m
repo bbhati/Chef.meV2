@@ -39,6 +39,8 @@
 {
     [super viewDidLoad];
 	
+    [self.navigationController setToolbarHidden:YES];
+    
 	if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
         // iOS 7
         [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];

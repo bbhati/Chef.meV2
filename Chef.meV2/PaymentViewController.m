@@ -88,7 +88,7 @@
 //                               } else {
                                ShoppingCartController* cartController = [ShoppingCartController sharedInstance];
                                [cartController clearItems];
-                                   [self.navigationController popViewControllerAnimated:YES];
+                                   [self.navigationController popToRootViewControllerAnimated:YES];
 //                               }
                            }];
 }
